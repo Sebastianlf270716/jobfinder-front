@@ -24,6 +24,7 @@ import { ReportDatesComponent } from './report-dates/report-dates.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { ReportGeneralComponent } from './report-general/report-general.component';
+import { ProfileConsultUserComponent } from './profile-consult-user/profile-consult-user.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ReportGeneralComponent } from './report-general/report-general.componen
     OfferSearchComponent,
     OfferPostComponent,
     ProfileConsultEmployerComponent,
+    ProfileConsultUserComponent,
     ReportGeneralComponent,
     ReportDatesChoiceComponent,
     ReportDatesComponent,
