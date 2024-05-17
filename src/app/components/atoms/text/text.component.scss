@@ -1,14 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
 
+:host {
+    display: inline-block;
+}
+
 .nav__logo {
     font-family: 'Merienda';
     color: #ffffff;
-    font-size: 3.9063vw;
-    font-weight: 300;
+    font-size: clamp(29px, 3.9063vw, 100vw);
+    font-weight: 100;
 }
 
 .footer__text {
     font-family: 'Merienda';
     color: #ffffff;
-    font-size: 2.3428vw;
+    font-size: clamp(17px, 2.3428vw, 100vw);
+    font-weight: 100;
+}
+
+.home__text {
+    font-family: 'Merienda';
+    color: #8C8C8C;
+    font-size: clamp(23px, 3.125vw, 100vw);
+    font-weight: 100;
 }

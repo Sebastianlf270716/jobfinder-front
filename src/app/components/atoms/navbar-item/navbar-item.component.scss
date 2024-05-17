@@ -2,7 +2,7 @@
 
 .item__text {
     font-family: 'Merienda';
-    font-size: 2.3438vw;
+    font-size: clamp(17px, 2.3438vw, 100vw);
     color: #ffffff;
     text-decoration: none;
 }

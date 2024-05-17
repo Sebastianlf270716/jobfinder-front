@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavbarItemComponent } from './navbar-item/navbar-item.component';
 import { TextComponent } from './text/text.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
     TextComponent,
-    NavbarItemComponent
+    NavbarItemComponent,
+    ButtonComponent
   ],
   imports: [
     CommonModule,
@@ -15,7 +17,8 @@ import { TextComponent } from './text/text.component';
   ],
   exports: [
     TextComponent,
-    NavbarItemComponent
+    NavbarItemComponent,
+    ButtonComponent
   ]
 })
 export class AtomsModule { }

@@ -1,0 +1,22 @@
+.section__home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
+
+.section__home:first-child {
+    margin-top: 32px;
+}
+
+.section__home:last-child {
+    margin-bottom: 32px;
+}
+
+.section__logo {
+    width: 38.3594vw;
+    min-width: 284px;
+    height: 23.0469vw;
+    min-height: 171px;
+}
