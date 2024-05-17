@@ -1,10 +1,15 @@
 <nav class="navbar">
-    <div>
-        <img src="./assets/img/logo-white.png" alt="Logo">
-        <app-text [text]="'JobFinder'"></app-text>
-        <p>{{currentRoute}}</p>
+    <div class="logo__container">
+        <img class="logo__img" src="./assets/img/logo-white.png" alt="Logo">
+        <app-text class="nav__logo" [text]="'JobFinder'"></app-text>
     </div>
-    <div *ngFor="let link of navLinks[currentRoute]">
-        <app-navbar-item [text]="link.text" [route]="link.route"></app-navbar-item>
+    <div class="items__container">
+        <ng-container *ngFor="let link of navLinks[currentRoute]; let i = index">
+            <div>
+                <app-navbar-item [text]="link.text" [route]="link.route"></app-navbar-item>
+            </div>
+            <img class="line__vertical" *ngIf="i < navLinks[currentRoute].length - 1"
+            src="./assets/img/line-vertical.svg" alt="Linea vertical">
+        </ng-container>
     </div>
 </nav>
