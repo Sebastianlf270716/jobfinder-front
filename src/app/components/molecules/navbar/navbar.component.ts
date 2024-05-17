@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +9,74 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit{
 
+  @Input() userType:string = 'employer'; 
+
   navLinks: { [key: string]: any[] } = {
-    '/home': [{route: '/login', text: 'Iniciar sesión'}
+    '/': [{route: '/login', text: 'Iniciar sesión'},
+              {route: '/register-option', text: 'Registrarse'}
+    ],
+    '/home': [{route: '/login', text: 'Iniciar sesión'},
+              {route: '/register-option', text: 'Registrarse'}
+    ],
+    '/register-option': [{route: '/home', text: 'Inicio'},
+    {route: '/login', text: 'Iniciar sesión'}
+    ],
+    '/register-employer': [{route: '/home', text: 'Inicio'},
+    {route: '/login', text: 'Iniciar sesión'}
+    ],
+    '/register-user': [{route: '/home', text: 'Inicio'},
+    {route: '/login', text: 'Iniciar sesión'}
+    ],
+    '/login': [{route: '/home', text: 'Inicio'},
+    {route: '/register-option', text: 'Registrarse'}
+    ],
+    '/home-employer': [{route: '/home', text: 'Cerrar sesión'},
+    ],
+    '/offer-consult': [{route: `/home-${this.userType}`, text: 'Inicio'},
+    {route: '/home', text: 'Cerrar sesión'}
+    ],
+    '/offer-list': [{route: `/home-${this.userType}`, text: 'Inicio'},
+    {route: '/home', text: 'Cerrar sesión'}
+    ],
+    '/offer-report': [{route: `/home-${this.userType}`, text: 'Inicio'},
+    {route: '/home', text: 'Cerrar sesión'}
+    ],
+    '/offer-report-list': [{route: `/home-${this.userType}`, text: 'Inicio'},
+    {route: '/home', text: 'Cerrar sesión'}
+    ],
+    '/candidates-list': [{route: `/home-${this.userType}`, text: 'Inicio'},
+    {route: '/home', text: 'Cerrar sesión'}
+    ],
+    '/candidate-info': [{route: `/home-${this.userType}`, text: 'Inicio'},
+    {route: '/home', text: 'Cerrar sesión'}
+    ],
+    '/offer-search': [{route: '/login', text: 'Iniciar sesión'},
+    {route: '/register-option', text: 'Registrarse'}
+    ],
+    '/offer-post': [{route: `/home-${this.userType}`, text: 'Inicio'},
+    {route: '/home', text: 'Cerrar sesión'}
+    ],
+    '/profile-consult-user': [{route: `/home-${this.userType}`, text: 'Inicio'},
+    {route: '/home', text: 'Cerrar sesión'}
+    ],
+    '/profile-consult-employer': [{route: `/home-${this.userType}`, text: 'Inicio'},
+    {route: '/home', text: 'Cerrar sesión'}
+    ],
+    '/report-general': [{route: `/home-${this.userType}`, text: 'Inicio'},
+    {route: '/home', text: 'Cerrar sesión'}
+    ],
+    '/report-dates-choice': [{route: `/home-${this.userType}`, text: 'Inicio'},
+    {route: '/home', text: 'Cerrar sesión'}
+    ],
+    '/report-dates': [{route: `/home-${this.userType}`, text: 'Inicio'},
+    {route: '/home', text: 'Cerrar sesión'}
+    ],
+    '/home-admin': [{route: '/home', text: 'Cerrar sesión'},
+    ],
+    '/home-user': [{route: '/home', text: 'Cerrar sesión'},
+    ],
+    '/offer-search-user': [{route: `/home-${this.userType}`, text: 'Inicio'},
+    {route: '/home', text: 'Cerrar sesión'}
     ],
 
   };

@@ -25,6 +25,7 @@ import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { ReportGeneralComponent } from './report-general/report-general.component';
 import { ProfileConsultUserComponent } from './profile-consult-user/profile-consult-user.component';
+import { OfferSearchUserComponent } from './offer-search-user/offer-search-user.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ProfileConsultUserComponent } from './profile-consult-user/profile-cons
     ReportDatesChoiceComponent,
     ReportDatesComponent,
     HomeAdminComponent,
-    HomeUserComponent
+    HomeUserComponent,
+    OfferSearchUserComponent
   ],
   imports: [
     CommonModule,

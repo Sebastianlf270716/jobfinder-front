@@ -21,6 +21,7 @@ import { ReportDatesChoiceComponent } from './components/pages/report-dates-choi
 import { HomeAdminComponent } from './components/pages/home-admin/home-admin.component';
 import { ReportDatesComponent } from './components/pages/report-dates/report-dates.component';
 import { HomeUserComponent } from './components/pages/home-user/home-user.component';
+import { OfferSearchUserComponent } from './components/pages/offer-search-user/offer-search-user.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -44,7 +45,8 @@ const routes: Routes = [
   {path: 'report-dates-choice', component: ReportDatesChoiceComponent},
   {path: 'report-dates', component: ReportDatesComponent},
   {path: 'home-admin', component: HomeAdminComponent},
-  {path: 'home-user', component: HomeUserComponent}
+  {path: 'home-user', component: HomeUserComponent},
+  {path: 'offer-search-user', component: OfferSearchUserComponent}
 ];
 
 @NgModule({
