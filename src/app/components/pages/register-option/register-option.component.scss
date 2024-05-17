@@ -1,0 +1,76 @@
+
+.contenido{
+    background-color: #B3B3B6;
+    padding-block: 95px;
+}
+
+.cuadroRegistro{
+    width: 720px;
+    background-color: white;
+    margin: auto;
+    height: 410px;
+    text-align: center;
+    border-color: #1561F8;
+    border-width: 3px;
+    border-style: solid;
+    text-align: left;
+}
+
+.cboRegistro{
+    background-color: #1561F8;
+    width: 500px;
+    color: white;
+    border-width: 0;
+    font-size: 30px;
+    padding-inline: 35px;
+    padding-block: 25px;
+    margin-top: 55px;
+    margin-inline: auto;
+    cursor: pointer;
+}
+
+.cboRegistroDesplegado{
+    background-color: #1561F8;
+    width: 500px;
+    color: white;
+    border-width: 0;
+    font-size: 30px;
+    margin-top: 55px;
+    margin-inline: auto;
+}
+
+.cboRegistro:hover{
+    background-color: #1561f88c;
+}
+
+#flecha-abajo, #flecha-arriba{
+    float: right;
+    margin-top: 15px;
+}
+
+.opcion, .primeraFila{
+    padding-top: 20px;
+    cursor: pointer;
+    margin: 0;
+    padding-inline: 35px;
+    padding-block: 25px;
+}
+
+.opcion{
+    border-top-width: 1px;
+    border-top-color: #8fb4ff8c;
+    border-top-style: solid;
+}
+
+.opcion:hover{
+    background-color: #82acff8e;
+}
+
+.ocultar{
+    display: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
