@@ -1,1 +1,18 @@
-<p>register-option works!</p>
+<div class="contenido">
+    <div class="cuadroRegistro">
+        <div class="inputRegistro">
+            <div (click)="desplegarCombo()" [ngClass]="cboRegistro">
+                <span>Registrarse como:</span>
+                <img src="./assets/img/flecha-select.png" alt="flecha" id="flecha-abajo" />
+            </div>
+            <div [ngClass]="cboRegistroDesplegado" (click)="plegarCombo()">
+                <div class="primeraFila">
+                    <span id="registrarseComo">Registrarse como:</span>
+                    <img src="./assets/img/flecha-arriba.png" alt="flecha" id="flecha-arriba" />
+                </div>
+                <a href="/register-employer"><p class="opcion">Empleador</p></a>
+                <a href="/register-user"><p class="opcion">Usuario</p></a>
+            </div>
+        </div>
+    </div>
+</div>
