@@ -1,0 +1,86 @@
+
+.contenido{
+    background-color: #B3B3B6;
+    padding-block: 65px;
+}
+
+.container{
+    width: 60%;
+    min-width: 420px;
+    background-color: white;
+    margin: auto;
+    border-color: #1561F8;
+    border-width: 3px;
+    border-style: solid;
+    padding-bottom: 20px;
+}
+
+.info-perfil{
+    color: #1561F8;
+    text-align: center;
+    margin-block: 35px;
+    font-size: 30px;
+}
+
+.dato{
+    width: 100%;
+    padding-block: 10px;
+    padding-inline: 20px;
+    font-size: 20px;
+    background-color: #6E6E6E;
+    color: white;
+    border-color: #A7ABB1;
+    border-style: solid;
+    border-width: 3px;
+    margin-block: 12px;
+}
+
+.row{
+    text-align: center;
+    width: 95%;
+    margin-inline: auto;
+    align-items: center;
+}
+
+::placeholder{
+    color: white;
+}
+
+.btn-modificar, .btn-eliminar{
+    width: 100%;
+    padding-block: 8px;
+    font-size: 30px;
+    color: white;
+    border-width: 0px;
+    margin-block: 25px;
+}
+
+.btn-eliminar{
+    background-color: #fc2929;
+}
+
+.btn-modificar{
+    background-color: #1561F8;
+}
+
+.btn-eliminar:hover{
+    background-color: #FE4B4B;
+}
+
+.btn-modificar:hover{
+    background-color: #5d93ff;;
+}
+
+label{
+    float: left;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.imagen{
+    float: right;
+    margin-top: -75px;
+    margin-right: 20px;
+
+}

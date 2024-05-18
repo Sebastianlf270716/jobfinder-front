@@ -22,7 +22,7 @@
     width: 70%;
     color: white;
     border-width: 0;
-    font-size: 30px;
+    font-size: clamp(17px, 2.3438vw, 100vw);
     padding-inline: 35px;
     padding-block: 25px;
     margin-top: 55px;
@@ -35,7 +35,7 @@
     width: 70%;
     color: white;
     border-width: 0;
-    font-size: 30px;
+    font-size: clamp(17px, 2.3438vw, 100vw);
     margin-top: 55px;
     margin-inline: auto;
 }
@@ -46,7 +46,8 @@
 
 #flecha-abajo, #flecha-arriba{
     float: right;
-    margin-top: 15px;
+    margin-top: 4%;
+    width: 9%;
 }
 
 .opcion, .primeraFila{
