@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./candidates-list.component.scss']
 })
 export class CandidatesListComponent implements OnInit {
+  public redirigir():void{
+    window.location.href='/candidate-info';
+  }
 
   constructor() { }
 

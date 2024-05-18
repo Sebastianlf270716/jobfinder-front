@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./offer-report-list.component.scss']
 })
 export class OfferReportListComponent implements OnInit {
+  public redirigirOferta():void{
+    window.location.href='/offer-consult';
+  }
+
+  public redirigirEstadisticaOferta():void{
+    window.location.href='/offer-report';
+  }
 
   constructor() { }
 

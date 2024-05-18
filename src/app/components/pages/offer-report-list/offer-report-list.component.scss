@@ -1,0 +1,58 @@
+.contenedor{
+    width: 95%;
+    margin-inline: auto;
+    min-height: 500px;
+}
+
+table{
+    margin-block: 20px;
+    border-collapse: separate;
+    border-spacing: 0 18px;
+    width: 100%;
+}
+
+th{
+    font-size: 30px;
+    font-weight: 500;
+    padding-block: 10px;
+    padding-left: 10px;
+}
+
+.thNombre{
+    width: 33%;
+}
+
+tr{
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+td{
+    padding-inline: 20px;
+    background-color: #6E6E6E;
+    padding-block: 10px;
+}
+
+.nombre, .ciudad{
+    border-right-width: 3px;
+    border-right-color: #363636;
+    border-right-style: solid;
+}
+
+.flecha-atras{
+    float: right;
+}
+
+.btn-estadisticas{
+    padding-inline: 20px;
+    background-color: #1561F8;
+    color: white;
+    border-width: 0px;
+    float: right;
+    margin-inline: 20px;
+}
+
+.btn-estadisticas:hover{
+    background-color: #5d93ff;
+}

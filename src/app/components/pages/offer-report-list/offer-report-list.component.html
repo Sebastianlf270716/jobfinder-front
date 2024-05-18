@@ -1,1 +1,30 @@
-<p>offer-report-list works!</p>
+<div class="contenedor">
+    <table>
+        <thead>
+            <th class="thNombre">Nombre</th>
+            <th>Ciudad
+                <a href="/offer-consult"><img src="./assets/img/flecha-atras.png" alt="flecha-atras" class="flecha-atras" /></a>
+            </th>
+        </thead>
+        <tbody>
+            <tr (click)="redirigirOferta()">
+                <td class="nombre">Nombre</td>
+                <td>Ciudad
+                    <a href="/offer-report"><button class="btn-estadisticas">Ver estadísticas</button></a>
+                </td>
+            </tr>
+            <tr (click)="redirigirOferta()">
+                <td class="nombre">Nombre</td>
+                <td>Ciudad
+                    <a href="/offer-report"><button class="btn-estadisticas">Ver estadísticas</button></a>
+                </td>
+            </tr>
+            <tr (click)="redirigirOferta()">
+                <td class="nombre">Nombre</td>
+                <td>Ciudad
+                    <a href="/offer-report"><button class="btn-estadisticas">Ver estadísticas</button></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
