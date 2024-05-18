@@ -1,1 +1,92 @@
-<p>register-user works!</p>
+<div class="contenido">
+    <div class="contenedor">
+        <h3 class="registrarse">REGISTRARSE</h3>
+        <div class="row">
+            <div class="col-lg-6">
+                <input type="text" placeholder="Nombre" class="dato" />
+            </div>
+            <div class="col-lg-3">
+                <input type="text" placeholder="Teléfono" class="dato" />
+            </div>
+            <div class="col-lg-3">
+                <input type="text" placeholder="Ciudad" class="dato" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 campo">
+                <input type="text" placeholder="Correo electrónico" class="dato" />
+            </div>
+            <div class="col-lg-3 campo">
+                <input type="text" placeholder="Contraseña" class="dato" />
+            </div>
+            <div class="col-lg-3 position-relative">
+                <div [ngClass]="cboRegistroDesplegado" class="position-absolute" (click)="plegarCombo()">
+                    <div class="primeraFila">
+                        <span id="registrarseComo">Género</span>
+                        <img src="./assets/img/flecha-arriba.png" alt="flecha" id="flecha-arriba" />
+                    </div>
+                    <p class="opcion" (click)="genero='Masculino'">Masculino</p>
+                    <p class="opcion" (click)="genero='Femenino'">Femenino</p>
+                    <p class="opcion" (click)="genero='Otro'">Otro</p>
+                </div>
+                <div (click)="desplegarCombo()" [ngClass]="cboRegistro">
+                    <span>{{genero}}</span>
+                    <img src="./assets/img/flecha-select.png" alt="flecha" id="flecha-abajo" />
+                </div>
+                
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-lg-6">
+                <h3>Estudios</h3>
+                <div>
+                    <div class="col-lg-12">
+                        <input type="text" placeholder="Nombre de la institución" class="dato" />
+                    </div>
+                    <div class="col-lg-12">
+                        <input type="text" placeholder="Título" class="dato" />
+                    </div>
+                    <div style="display: flex; justify-content: space-between;
+                    align-items: center;">
+                        <div class="tiempo">
+                            <input type="text" placeholder="Tiempo (años)" class="dato" id="txtTiempo" />
+                        </div>
+                        <div class="estudio">
+                            <button class="btn-registro" id="txtBtnAgregarEstudio">Agregar estudio</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3>Experiencia laboral</h3>
+                <div>
+                    <div class="col-lg-12">
+                        <input type="text" placeholder="Nombre de la empresa" class="dato" />
+                    </div>
+                    <div class="col-lg-12">
+                        <input type="text" placeholder="Cargo" class="dato" />
+                    </div>
+                    <div style="display: flex; justify-content: space-between;
+                    align-items: center;">
+                        <div class="tiempo">
+                            <input type="text" placeholder="Tiempo (años)" class="dato" id="txtTiempo" />
+                        </div>
+                        <div class="estudio">
+                            <button class="btn-registro" id="txtBtnAgregarExperiencia">Agregar experiencia</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <h3></h3>
+            </div>
+        </div>
+        <div style="width: 23%; margin: auto; min-width: 300px;">
+            <button class="btn-registro btn-xl">Registrarme</button>
+        </div>
+    </div>
+</div>
