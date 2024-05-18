@@ -1,1 +1,19 @@
-<p>home-admin works!</p>
+<section class="home__section">
+    <div class="container">
+        <div class="home__row">
+            <app-text class="home__user-text" [text]="'Gestionar ofertas'"></app-text>
+            <div class="options__container">
+                <a href="/offer-post" class="home__button">Publicar oferta</a>
+                <a href="/offer-list" class="home__button">Consultar oferta</a>
+            </div>
+        </div>
+        <div class="home__row">
+            <app-text class="home__user-text" [text]="'Estadísticas'"></app-text>
+            <div class="options__container">
+                <a href="/report-general" class="home__button">Informe general</a>
+                <a href="/report-dates-choice" class="home__button">Informe por fechas</a>
+                <a href="/offer-report" class="home__button">Informe de oferta</a>
+            </div>
+        </div>
+    </div>
+</section>
