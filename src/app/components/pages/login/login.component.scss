@@ -1,0 +1,60 @@
+
+.contenido{
+    background-color: #B3B3B6;
+    padding-block: 45px;
+}
+
+.contenedor{
+    width: 55%;
+    min-width: 400px;
+    background-color: white;
+    margin: auto;
+    padding-block: 10px;
+    text-align: center;
+}
+
+.iniciar-sesion{
+    color: #1561F8;
+    text-align: center;
+    margin-block: 20px;
+    font-size: 30px;
+}
+
+.dato{
+    width: 90%;
+    padding-block: 10px;
+    padding-inline: 20px;
+    font-size: 20px;
+    background-color: #6E6E6E;
+    color: white;
+    border-color: #1561F8;
+    border-style: solid;
+    border-width: 3px;
+    margin-block: 12px;
+}
+::placeholder{
+    color: #B3B3B6;
+}
+
+.btn-iniciar{
+    width: 100%;
+    padding-block: 8px;
+    font-size: 25px;
+    background-color: #1561F8;
+    color: white;
+    border-width: 0px;
+    margin-block: 20px;
+}
+
+.btn-iniciar:hover{
+    background-color: #5d93ff;;
+}
+
+.registrarse{
+    font-size: 20px;
+    padding-block: 15px;
+}
+
+a{
+    text-decoration: none;
+}

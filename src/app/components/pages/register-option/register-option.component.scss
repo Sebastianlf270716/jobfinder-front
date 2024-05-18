@@ -5,7 +5,8 @@
 }
 
 .cuadroRegistro{
-    width: 720px;
+    width: 54%;
+    min-width: 400px;
     background-color: white;
     margin: auto;
     height: 410px;
@@ -18,7 +19,7 @@
 
 .cboRegistro{
     background-color: #1561F8;
-    width: 500px;
+    width: 70%;
     color: white;
     border-width: 0;
     font-size: 30px;
@@ -31,7 +32,7 @@
 
 .cboRegistroDesplegado{
     background-color: #1561F8;
-    width: 500px;
+    width: 70%;
     color: white;
     border-width: 0;
     font-size: 30px;
