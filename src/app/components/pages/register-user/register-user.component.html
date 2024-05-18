@@ -20,6 +20,10 @@
                 <input type="text" placeholder="Contraseña" class="dato" />
             </div>
             <div class="col-lg-3 position-relative">
+                <div (click)="desplegarCombo()" [ngClass]="cboRegistro">
+                    <span>{{genero}}</span>
+                    <img src="./assets/img/flecha-select.png" alt="flecha" id="flecha-abajo" />
+                </div> 
                 <div [ngClass]="cboRegistroDesplegado" class="position-absolute" (click)="plegarCombo()">
                     <div class="primeraFila">
                         <span id="registrarseComo">Género</span>
@@ -28,12 +32,7 @@
                     <p class="opcion" (click)="genero='Masculino'">Masculino</p>
                     <p class="opcion" (click)="genero='Femenino'">Femenino</p>
                     <p class="opcion" (click)="genero='Otro'">Otro</p>
-                </div>
-                <div (click)="desplegarCombo()" [ngClass]="cboRegistro">
-                    <span>{{genero}}</span>
-                    <img src="./assets/img/flecha-select.png" alt="flecha" id="flecha-abajo" />
-                </div>
-                
+                </div>    
             </div>
         </div>
         <div class="row my-2">
