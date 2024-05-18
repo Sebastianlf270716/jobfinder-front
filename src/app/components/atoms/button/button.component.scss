@@ -8,5 +8,10 @@
     color: #ffffff;
     font-family: 'Merienda';
     font-size: clamp(17px, 2.3436vw, 100vw);
+    font-weight: 100;
+}
 
+.button__one:hover {
+    background-color: #8C8C8C;
+    color: #1561F8;
 }
