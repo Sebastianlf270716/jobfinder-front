@@ -1,1 +1,25 @@
-<p>home-employer works!</p>
+<section class="home__section">
+    <div class="container">
+        <div class="home__row">
+            <app-text class="home__user-text" [text]="'Gestionar perfil'"></app-text>
+            <div class="options__container">
+                <a href="/profile-consult-employer" class="home__button">Consultar perfil</a>
+            </div>
+        </div>
+        <div class="home__row">
+            <app-text class="home__user-text" [text]="'Gestionar ofertas'"></app-text>
+            <div class="options__container">
+                <a href="/profile-consult-employer" class="home__button">Publicar oferta</a>
+                <a href="/profile-consult-employer" class="home__button">Consultar oferta</a>
+            </div>
+        </div>
+        <div class="home__row">
+            <app-text class="home__user-text" [text]="'Estadísticas'"></app-text>
+            <div class="options__container">
+                <a href="/profile-consult-employer" class="home__button">Informe general</a>
+                <a href="/profile-consult-employer" class="home__button">Informe por fechas</a>
+                <a href="/profile-consult-employer" class="home__button">Informe de oferta</a>
+            </div>
+        </div>
+    </div>
+</section>

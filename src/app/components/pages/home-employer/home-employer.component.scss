@@ -1,0 +1,27 @@
+.home__section {
+    background-color: #B3B3B6;
+    padding: 47px 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 20px;
+}
+
+.home__row:nth-of-type(2) {
+    margin: 30px 0;
+}
+
+.options__container {
+    display: flex;
+    gap: 37px;
+}
+
+.home__button {
+    background-color: #1561F8;
+    padding: 5px 10px;
+    font-size: 30px;
+    font-weight: 100;
+    color: #ffffff;
+    text-decoration: none;
+}
