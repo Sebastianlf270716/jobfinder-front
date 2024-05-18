@@ -1,1 +1,16 @@
-<p>home-user works!</p>
+<section class="home__section">
+    <div class="container">
+        <div class="home__row">
+            <app-text class="home__user-text" [text]="'Gestionar perfil'"></app-text>
+            <div class="options__container">
+                <a href="/profile-consult-user" class="home__button">Consultar perfil</a>
+            </div>
+        </div>
+        <div class="home__row">
+            <app-text class="home__user-text" [text]="'Ofertas'"></app-text>
+            <div class="options__container">
+                <a href="/offer-search-user" class="home__button">Buscar ofertas</a>
+            </div>
+        </div>
+    </div>
+</section>
