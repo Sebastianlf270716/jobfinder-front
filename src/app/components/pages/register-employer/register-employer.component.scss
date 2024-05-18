@@ -1,0 +1,61 @@
+
+.contenido{
+    background-color: #B3B3B6;
+    padding-block: 65px;
+}
+
+.container{
+    width: 60%;
+    min-width: 450px;
+    background-color: white;
+    margin: auto;
+    border-color: #1561F8;
+    border-width: 3px;
+    border-style: solid;
+    padding-bottom: 20px;
+}
+
+.registrarse{
+    color: #1561F8;
+    text-align: center;
+    margin-block: 20px;
+    font-size: 30px;
+}
+
+.dato{
+    width: 100%;
+    padding-block: 10px;
+    padding-inline: 20px;
+    font-size: 20px;
+    background-color: #6E6E6E;
+    color: white;
+    border-color: #A7ABB1;
+    border-style: solid;
+    border-width: 3px;
+    margin-block: 12px;
+}
+
+.row{
+    text-align: center;
+    width: 95%;
+    margin-inline: auto;
+    align-items: center;
+}
+
+::placeholder{
+    color: white;
+}
+
+.btn-registro{
+    width: 100%;
+    padding-block: 8px;
+    font-size: 30px;
+    background-color: #1561F8;
+    color: white;
+    border-width: 0px;
+    margin-block: 12px;
+}
+
+.btn-registro:hover{
+    background-color: #5d93ff;;
+}
