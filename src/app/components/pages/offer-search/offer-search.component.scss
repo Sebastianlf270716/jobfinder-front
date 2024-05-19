@@ -1,3 +1,6 @@
+// .contenedor{
+//     min-width: 700px;
+// }
 
 .cboFiltro{
     padding-inline: 10px;
@@ -79,12 +82,12 @@
 }
 
 .listNombre, .propiedad{
-    font-size: 30px;
+    font-size: clamp(17px, 2.3438vw, 100vw);
     color: #1561F8;
 }
 
 .valor{
-    font-size: 30px;
+    font-size: clamp(17px, 2.3438vw, 100vw);
     margin-left: 20px;
     font-weight: 500;
 }
@@ -94,7 +97,7 @@
 }
 
 .listEmpresa, .listCiudad{
-    font-size: 25px;
+    font-size: clamp(17px, 1.9438vw, 100vw);
 }
 .listEmpresa{
     font-weight: 500;
@@ -135,22 +138,27 @@ p, .listNombre{
 }
 .descripcionOferta{
     padding-inline: 30px;
-    padding-block: 10px;
+    padding-block: 20px;
     border-left-color: #1561F8;
     border-left-style: solid;
     width: 100%;
+    min-height: 300px;
 }
 
 .nombre{
     color: #1561F8;
-    font-size: 50px;
+    font-size: clamp(17px, 3.1438vw, 100vw);
 }
 .empresa, .ciudad{
-    font-size: 35px;
+    font-size: clamp(17px, 2.3438vw, 100vw);
 }
 .ciudad{
     color: #6E6E6E;
 }
 .funcion{
     margin-bottom: 10px;
+}
+.sinSeleccionar{
+    text-align: center;
+    margin-top: 100px;
 }

@@ -8,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class OfferSearchComponent implements OnInit {
   cboFiltro: string = "cboFiltro";
   cboFiltroDesplegado: string = "ocultar";  
-  nombreOferta:string = "Nombre";
-  empresa:string = "Empresa";
-  ciudad:string = "Ciudadd";
-  cargo:string = "Cargo";
+  nombreOferta:string = "";
+  empresa:string = "";
+  ciudad:string = "";
+  cargo:string = "";
   salario:Number = 0;
   experiencia:Number = 0;
   funciones:string[] = [];
+
+  sinSeleccionar:string = 'sinSeleccionar';
+  ofertaSeleccionada:string = 'ocultar'
 
   public plegarCombo(){
     this.cboFiltro = "ocultar";
@@ -27,6 +30,9 @@ export class OfferSearchComponent implements OnInit {
   }
 
   public seleccionarOferta(e:any): void{
+    this.ofertaSeleccionada = 'ofertaSeleccionada';
+    this.sinSeleccionar = 'ocultar';
+
     this.nombreOferta = this.datos[e.target.id].nombre;
     this.empresa = this.datos[e.target.id].empresa;
     this.ciudad = this.datos[e.target.id].ciudad;
@@ -38,6 +44,8 @@ export class OfferSearchComponent implements OnInit {
 
   public prevenirEvento(e: Event): void {
     e.stopPropagation();
+    this.ofertaSeleccionada = 'ofertaSeleccionada';
+    this.sinSeleccionar = 'ocultar';
     const hijo = e.target as HTMLElement;
     const padre = hijo.parentElement;
     const id = Number(padre?.id)
