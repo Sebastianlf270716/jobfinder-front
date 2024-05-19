@@ -1,1 +1,64 @@
-<p>offer-search works!</p>
+<div class="contenedor">
+    <div class="searchBar row">
+        <div class="col-md-4 position-relative my-1">
+            <div (click)="plegarCombo()" [ngClass]="cboFiltro">
+                <span>Filtrar por:</span>
+                <img src="./assets/img/flecha-select.png" alt="flecha" id="flecha-abajo" />
+            </div>
+            <div [ngClass]="cboFiltroDesplegado" (click)="desplegarCombo()">
+                <div class="primeraFila">
+                    <span>Filtrar por:</span>
+                    <img src="./assets/img/flecha-arriba.png" alt="flecha" id="flecha-arriba" />
+                </div>
+                <p class="opcion">Ciudad</p>
+                <p class="opcion">Cargo</p>
+            </div>
+        </div>
+        <div class="col-md-8 my-1">
+            <input type="text" class="buscar" placeholder="Buscar" />
+            <img src="./assets/img/lupa.png" alt="lupa" id="lupa" />
+        </div>
+    </div>
+    <div class="dvOfertas">
+        <div class="dvListaOfertas">
+            <ul>
+                <li (click)="seleccionarOferta($event)" *ngFor="let oferta of datos" [id]="oferta.id" class="oferta" >
+                    <h3 (click)="prevenirEvento($event)" class="listNombre">{{oferta.nombre}}</h3>
+                    <p (click)="prevenirEvento($event)" class="listEmpresa">{{oferta.empresa}}</p>
+                    <p (click)="prevenirEvento($event)" class="listCiudad">{{oferta.ciudad}}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="descripcionOferta">
+            <h2 class="nombre">{{nombreOferta}}</h2>
+            <p class="empresa">{{empresa}}</p>
+            <p class="ciudad">{{ciudad}}</p>
+            <div class="row">
+                <div class="col-md-6 columna">
+                    <span class="propiedad">Cargo:</span>
+                    <span class="valor">{{cargo}}</span>
+                </div>
+                <div class="col-md-6 columna">
+                    <span class="propiedad">Salario:</span>
+                    <span class="valor">$ {{salario}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 columna">
+                    <span class="propiedad">Experiencia:</span>
+                    <span class="valor">{{experiencia}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 columna">
+                    <span class="propiedad">Funciones:</span>
+                </div>
+                <div class="col-md-9 columna">
+                    <ul>
+                        <li class="funcion" *ngFor="let funcion of funciones"><span class="valor">{{funcion}}</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

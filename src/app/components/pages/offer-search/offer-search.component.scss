@@ -1,0 +1,156 @@
+
+.cboFiltro{
+    padding-inline: 10px;
+    padding-block: 8px;
+    cursor: pointer;
+}
+
+.cboFiltroDesplegado, .cboFiltro{
+    background-color: #1561F8;
+    width: 70%;
+    color: white;
+    border-width: 0;
+    font-size: 20px;
+}
+
+.cboFiltroDesplegado{
+    position: absolute;
+    width: 64.7%;
+}
+
+#flecha-abajo, #flecha-arriba{
+    float: right;
+    margin-top: 4%;
+    width: 25px;
+}
+
+.opcion, .primeraFila{
+    padding-top: 20px;
+    cursor: pointer;
+    margin: 0;
+    padding-inline: 10px;
+    padding-block: 8px;
+}
+
+.opcion{
+    border-top-width: 1px;
+    border-top-color: #8fb4ff8c;
+    border-top-style: solid;
+}
+
+.cboFiltro:hover{
+    background-color: #1561f88c;
+}
+
+.opcion:hover{
+    background-color: #82acff8e;
+}
+
+.ocultar{
+    display: none;
+}
+
+.searchBar{
+    position: relative;
+    margin-block: 40px;
+    margin-inline: auto;
+    width: 70%;
+}
+
+.buscar{
+    width: 90%;
+    padding-block: 3px;
+    padding-inline: 20px;
+    font-size: 24px;
+    background-color: #6E6E6E;
+    color: #B3B3B6;
+    border-color: #A7ABB1;
+    border-style: solid;
+    border-width: 3px;
+}
+
+::placeholder{
+    color: #B3B3B6;
+}
+
+#lupa{
+    float: right;
+    margin-top: 5px;
+}
+
+.listNombre, .propiedad{
+    font-size: 30px;
+    color: #1561F8;
+}
+
+.valor{
+    font-size: 30px;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.columna{
+    margin-top: 20px;
+}
+
+.listEmpresa, .listCiudad{
+    font-size: 25px;
+}
+.listEmpresa{
+    font-weight: 500;
+}
+.listCiudad{
+    color: #6E6E6E;
+}
+
+.oferta{
+    list-style: none;
+    border-bottom-width: 3px;
+    border-bottom-color: #1561F8;
+    border-bottom-style: solid;
+    padding-inline: 30px;
+    padding-block: 10px;
+    cursor: pointer;
+}
+
+ul{
+    padding: 0px;
+    margin-block: 0;
+}
+
+p, .listNombre{
+    margin-block: 6px;
+}
+
+.dvListaOfertas{
+    width: 35%;
+    padding-bottom: 0px;
+}
+
+.dvOfertas{
+    border-top-color: #1561F8;
+    border-top-style: solid;
+    padding: 0px;
+    display: flex;
+}
+.descripcionOferta{
+    padding-inline: 30px;
+    padding-block: 10px;
+    border-left-color: #1561F8;
+    border-left-style: solid;
+    width: 100%;
+}
+
+.nombre{
+    color: #1561F8;
+    font-size: 50px;
+}
+.empresa, .ciudad{
+    font-size: 35px;
+}
+.ciudad{
+    color: #6E6E6E;
+}
+.funcion{
+    margin-bottom: 10px;
+}
