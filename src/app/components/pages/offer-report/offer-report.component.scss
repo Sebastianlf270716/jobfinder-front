@@ -1,0 +1,36 @@
+.contenedor{
+    width: 90%;
+    margin-inline: auto;
+    padding-block: 50px;
+    margin-bottom: 30px;
+}
+
+.flecha-atras{
+    float: right;
+}
+
+.propiedad{
+    color: #1561F8;
+}
+
+.propiedad, .valor, .propGenero{
+    font-size: 30px;
+}
+
+
+.propGenero{
+    color: #6E6E6E;
+    padding-left: 30px;
+}
+
+.campo{
+    margin-block: 26px;
+}
+
+.genero{
+    margin-block: 15px;
+}
+
+#nombreOferta{
+    margin-left: -10px;
+}
