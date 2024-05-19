@@ -26,6 +26,7 @@ import { HomeUserComponent } from './home-user/home-user.component';
 import { ReportGeneralComponent } from './report-general/report-general.component';
 import { ProfileConsultUserComponent } from './profile-consult-user/profile-consult-user.component';
 import { OfferSearchUserComponent } from './offer-search-user/offer-search-user.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { OfferSearchUserComponent } from './offer-search-user/offer-search-user.
     AtomsModule,
     MoleculesModule,
     OrganismsModule,
-    TemplatesModule
+    TemplatesModule,
+    FormsModule
   ],
   exports: [
     HomeMainComponent

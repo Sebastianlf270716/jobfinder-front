@@ -36,7 +36,6 @@
 }
 
 .row{
-    text-align: center;
     width: 95%;
     margin-inline: auto;
     align-items: center;
@@ -58,4 +57,12 @@
 
 .btn-registro:hover{
     background-color: #5d93ff;;
+}
+
+.dvErrorGeneral {
+    text-align: center;
+}
+
+.text-error {
+    color: red;
 }

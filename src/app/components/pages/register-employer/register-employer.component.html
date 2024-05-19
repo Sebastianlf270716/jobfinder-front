@@ -1,36 +1,70 @@
 <div class="contenido">
     <div class="container">
         <h3 class="registrarse">REGISTRARSE</h3>
-        <form action="">
+        <div *ngIf="mensage !== ''" class="dvErrorGeneral">
+            <p class="text-error">{{mensage}}</p>
+        </div>
+        <form (ngSubmit)="onSubmit()" #form="ngForm">
             <div class="row">
                 <div class="col-lg-12">
-                    <input type="text" placeholder="Nombre de la empresa" class="dato" />
+                    <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="dvError">
+                        <small *ngIf="nombre.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input type="text" placeholder="Nombre de la empresa"
+                    class="dato" name="nombre" [(ngModel)]="formData.nombre"
+                    required #nombre="ngModel"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xl-5 campo">
-                    <input type="text" placeholder="Ciudad principal" class="dato" />
+                    <div *ngIf="ciudad.invalid && (ciudad.dirty || ciudad.touched)" class="dvError">
+                        <small *ngIf="ciudad.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input type="text" placeholder="Ciudad principal"
+                    class="dato" name="ciudad" [(ngModel)]="formData.ciudad"
+                    required #ciudad="ngModel"/>
                 </div>
                 <div class="col-xl-7 campo">
-                    <input type="text" placeholder="Actividad principal" class="dato" />
+                    <div *ngIf="actividad.invalid && (actividad.dirty || actividad.touched)" class="dvError">
+                        <small *ngIf="actividad.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input type="text" placeholder="Actividad principal"
+                    class="dato" name="actividad" [(ngModel)]="formData.actividad"
+                    required #actividad="ngModel"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <input type="text" placeholder="Correo electrónico" class="dato" />
+                    <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" class="dvError">
+                        <small *ngIf="correo.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input type="text" placeholder="Correo electrónico" 
+                    class="dato" name="correo" [(ngModel)]="formData.correo"
+                    required #correo="ngModel"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <input type="text" placeholder="Descripción" class="dato" />
+                    <div *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)" class="dvError">
+                        <small *ngIf="descripcion.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input type="text" placeholder="Descripción" 
+                    class="dato" name="descripcion" [(ngModel)]="formData.descripcion"
+                    required #descripcion="ngModel"/>
+                    
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 campo">
-                    <input type="password" placeholder="Contraseña" class="dato" />
+                    <div *ngIf="contrasenia.invalid && (contrasenia.dirty || contrasenia.touched)" class="dvError">
+                        <small *ngIf="contrasenia.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input type="password" placeholder="Contraseña" 
+                    class="dato" name="contrasenia" [(ngModel)]="formData.contrasenia"
+                    required #contrasenia="ngModel"/>
                 </div>
                 <div class="col-lg-6">
-                    <button class="btn-registro">Registrarme</button>
+                    <button class="btn-registro" [disabled]="form.invalid">Registrarme</button>
                 </div>
             </div>
         </form>
