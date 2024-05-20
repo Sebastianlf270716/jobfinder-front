@@ -27,7 +27,6 @@ export class RegisterEmployerComponent implements OnInit {
     if(this.validarFormulario()){
       //AQUI SE LLAMA AL SERVICIO
     }
-    console.log(this.formData);
   }
 
   validarFormulario(): boolean{

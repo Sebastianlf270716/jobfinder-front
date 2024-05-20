@@ -36,7 +36,6 @@
 }
 
 .row{
-    text-align: center;
     width: 95%;
     margin-inline: auto;
     align-items: center;
@@ -135,4 +134,12 @@ h3{
 
 .tiempo, .estudio{
     width: 48%;
+}
+
+.dvErrorGeneral {
+    text-align: center;
+}
+
+.text-error {
+    color: red;
 }

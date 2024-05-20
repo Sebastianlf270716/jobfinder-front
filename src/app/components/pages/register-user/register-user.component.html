@@ -1,24 +1,52 @@
 <div class="contenido">
     <div class="contenedor">
         <h3 class="registrarse">REGISTRARSE</h3>
-        <form action="">
+        <div *ngIf="mensage !== ''" class="dvErrorGeneral">
+            <p class="text-error">{{mensage}}</p>
+        </div>
+        <form (ngSubmit)="onSubmit()" #form="ngForm">
             <div class="row">
                 <div class="col-lg-6">
-                    <input type="text" placeholder="Nombre" class="dato" />
+                    <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="dvError">
+                        <small *ngIf="nombre.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input type="text" placeholder="Nombre" class="dato"
+                    name="nombre" [(ngModel)]="formData.nombre"
+                    required #nombre="ngModel"/>
                 </div>
                 <div class="col-lg-3">
-                    <input type="text" placeholder="Teléfono" class="dato" />
+                    <div *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)" class="dvError">
+                        <small *ngIf="telefono.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input type="text" placeholder="Teléfono" class="dato"
+                    name="telefono" [(ngModel)]="formData.telefono"
+                    required #telefono="ngModel"/>
                 </div>
                 <div class="col-lg-3">
-                    <input type="text" placeholder="Ciudad" class="dato" />
+                    <div *ngIf="ciudad.invalid && (ciudad.dirty || ciudad.touched)" class="dvError">
+                        <small *ngIf="ciudad.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input type="text" placeholder="Ciudad" class="dato" 
+                    name="ciudad" [(ngModel)]="formData.ciudad"
+                    required #ciudad="ngModel"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 campo">
-                    <input type="text" placeholder="Correo electrónico" class="dato" />
+                    <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" class="dvError">
+                        <small *ngIf="correo.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input type="text" placeholder="Correo electrónico" class="dato" 
+                    name="correo" [(ngModel)]="formData.correo"
+                    required #correo="ngModel"/>
                 </div>
                 <div class="col-lg-3 campo">
-                    <input type="password" placeholder="Contraseña" class="dato" />
+                    <div *ngIf="contrasenia.invalid && (contrasenia.dirty || contrasenia.touched)" class="dvError">
+                        <small *ngIf="contrasenia.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input type="password" placeholder="Contraseña" class="dato" 
+                    name="contrasenia" [(ngModel)]="formData.contrasenia"
+                    required #contrasenia="ngModel"/>
                 </div>
                 <div class="col-lg-3 position-relative">
                     <div (click)="desplegarCombo()" [ngClass]="cboRegistro">
@@ -30,9 +58,9 @@
                             <span id="registrarseComo">Género</span>
                             <img src="./assets/img/flecha-arriba.png" alt="flecha" id="flecha-arriba" />
                         </div>
-                        <p class="opcion" (click)="genero='Masculino'">Masculino</p>
-                        <p class="opcion" (click)="genero='Femenino'">Femenino</p>
-                        <p class="opcion" (click)="genero='Otro'">Otro</p>
+                        <p class="opcion" (click)="selectGenero('Masculino')">Masculino</p>
+                        <p class="opcion" (click)="selectGenero('Femenino')">Femenino</p>
+                        <p class="opcion" (click)="selectGenero('Otro')">Otro</p>
                     </div>    
                 </div>
             </div>
@@ -41,54 +69,65 @@
                     <h3>Estudios</h3>
                     <div>
                         <div class="col-lg-12">
-                            <input type="text" placeholder="Nombre de la institución" class="dato" />
+                            <input type="text" placeholder="Nombre de la institución" class="dato" 
+                            name="institucion" [(ngModel)]="estudio.institucion"
+                            #institucion="ngModel"/>
                         </div>
                         <div class="col-lg-12">
-                            <input type="text" placeholder="Título" class="dato" />
+                            <input type="text" placeholder="Título" class="dato" 
+                            name="titulo" [(ngModel)]="estudio.titulo"
+                            #titulo="ngModel"/>
                         </div>
                         <div style="display: flex; justify-content: space-between;
                         align-items: center;">
                             <div class="tiempo">
-                                <input type="text" placeholder="Tiempo (años)" class="dato" id="txtTiempo" />
+                                <input type="number" placeholder="Tiempo (años)" class="dato" id="txtTiempo" 
+                                name="tiempo" [(ngModel)]="estudio.tiempo"
+                                #tiempo="ngModel"/>
                             </div>
                             <div class="estudio">
-                                <button class="btn-registro" id="txtBtnAgregarEstudio">Agregar estudio</button>
+                                <button type="button" class="btn-registro" id="txtBtnAgregarEstudio"
+                                (click)="agregarEstudio()">
+                                Agregar estudio
+                                </button>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <h3>Experiencia laboral</h3>
                     <div>
                         <div class="col-lg-12">
-                            <input type="text" placeholder="Nombre de la empresa" class="dato" />
+                            <input type="text" placeholder="Nombre de la empresa" class="dato" 
+                            name="empresa" [(ngModel)]="experiencia.empresa"
+                            #empresa="ngModel"/>
                         </div>
                         <div class="col-lg-12">
-                            <input type="text" placeholder="Cargo" class="dato" />
+                            <input type="text" placeholder="Cargo" class="dato" 
+                            name="cargo" [(ngModel)]="experiencia.cargo"
+                            #cargo="ngModel"/>
                         </div>
                         <div style="display: flex; justify-content: space-between;
                         align-items: center;">
                             <div class="tiempo">
-                                <input type="text" placeholder="Tiempo (años)" class="dato" id="txtTiempo" />
+                                <input type="text" placeholder="Tiempo (años)" class="dato" id="txtTiempoExperiencia" 
+                                name="tiempo" [(ngModel)]="experiencia.tiempo"
+                                #tiempo="ngModel"/>
                             </div>
                             <div class="estudio">
-                                <button class="btn-registro" id="txtBtnAgregarExperiencia">Agregar experiencia</button>
+                                <button type="button" class="btn-registro"
+                                id="txtBtnAgregarExperiencia" (click)="agregarExperiencia()">
+                                Agregar experiencia
+                                </button>
                             </div>
                         </div>
                         
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3></h3>
-                </div>
-            </div>
             <div style="width: 23%; margin: auto; min-width: 300px;">
-                <button class="btn-registro btn-xl">Registrarme</button>
+                <button class="btn-registro btn-xl" [disabled]="form.invalid">Registrarme</button>
             </div>
-        </form>
-        
+        </form>   
     </div>
 </div>
