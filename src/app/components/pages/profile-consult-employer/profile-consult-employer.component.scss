@@ -46,7 +46,7 @@
     color: white;
 }
 
-.btn-modificar, .btn-eliminar{
+.btn-modificar, .btn-eliminar, .btn-guardar, .btn-cancelar{
     width: 100%;
     padding-block: 8px;
     font-size: 30px;
@@ -59,7 +59,7 @@
     background-color: #fc2929;
 }
 
-.btn-modificar{
+.btn-modificar, .btn-guardar{
     background-color: #1561F8;
 }
 
@@ -67,8 +67,14 @@
     background-color: #FE4B4B;
 }
 
-.btn-modificar:hover{
-    background-color: #5d93ff;;
+.btn-modificar:hover, .btn-guardar:hover{
+    background-color: #5d93ff;
+}
+.btn-cancelar{
+    background-color: #7f8185;
+}
+.btn-cancelar:hover{
+    background-color: #A7ABB1;
 }
 
 label{
@@ -82,5 +88,8 @@ label{
     float: right;
     margin-top: -75px;
     margin-right: 20px;
+}
 
+.ocultar{
+    display: none;
 }
