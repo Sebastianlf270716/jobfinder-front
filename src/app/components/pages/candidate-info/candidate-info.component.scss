@@ -1,0 +1,94 @@
+.contenido{
+    background-color: #B3B3B6;
+    padding-bottom: 45px;
+    padding-top: 35px;
+}
+
+.contenedor{
+    width: 90%;
+    min-width: 420px;
+    background-color: white;
+    margin-inline: auto;
+    padding-block: 30px;
+    padding-inline: 40px;
+}
+
+.dato{
+    width: 100%;
+    padding-block: 5px;
+    padding-inline: 20px;
+    font-size: 24px;
+    background-color: #6E6E6E;
+    color: white;
+    border-color: #A7ABB1;
+    border-style: solid;
+    border-width: 3px;
+    margin-bottom: 12px;
+}
+.info{
+    color: #1561F8;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+#flecha-atras{
+    float: right;
+}
+label{
+    float: left;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.btn-seleccionar{
+    width: 100%;
+    padding-block: 8px;
+    font-size: 25px;
+    color: white;
+    border-width: 0px;
+    background-color: #1561F8;
+    margin-top: 43px;
+}
+
+.btn-seleccionar:hover{
+    background-color: #5d93ff;
+
+}
+
+table{
+    margin-top: 0px;
+    border-collapse: separate;
+    border-spacing: 0 18px;
+    width: 100%;
+}
+
+tr{
+    color: white;
+    font-size: 20px;
+}
+
+td{
+    padding-inline: 20px;
+    background-color: #6E6E6E;
+    padding-block: 10px;
+}
+
+th{
+    width: 33%;
+}
+
+.institucion, .titulo{
+    border-right-width: 3px;
+    border-right-color: #363636;
+    border-right-style: solid;
+}
+
+.tblTitulo{
+    margin-bottom: -20px;
+    margin-top: 30px;
+}
+
+.infoBasica{
+    width: 96%;
+    margin-inline: auto;
+}

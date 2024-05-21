@@ -1,0 +1,67 @@
+.contenedor{
+    background-color: #B3B3B6;
+    padding-block: 50px;
+}
+
+.contenido{
+    background-color: white;
+    margin: auto;
+    border-color: #1561F8;
+    border-width: 3px;
+    border-style: solid;
+    width: 50%;
+    min-width: 400px;
+    padding: 35px;
+    text-align: center;
+}
+
+#flecha-atras{
+    float: right;
+}
+
+.dvFecha{
+    margin-inline:auto;
+    text-align: center;
+    margin-block: 25px;
+    justify-content: center;
+    display: flex;
+    margin-right: 8%;
+}
+
+.fecha{
+    font-size: 30px;
+    background-color: #1561F8;
+    border-width: 0px;
+    color: white;
+    padding: 10px;
+}
+
+h2{
+    text-align: center;
+}
+
+.raya{
+    width: 2px;
+    background-color: white;
+    margin-left: -50px;
+    margin-top: 15px;
+    height: 35px;
+}
+
+.titulo{
+    color: #1561F8;
+}
+
+.btn-informes{
+    padding-block: 8px;
+    font-size: 35px;
+    background-color: #1561F8;
+    color: white;
+    border-width: 0px;
+    margin-block: 12px;
+    padding-inline: 38px;
+}
+
+.btn-informes:hover{
+    background-color: #5d93ff;
+}

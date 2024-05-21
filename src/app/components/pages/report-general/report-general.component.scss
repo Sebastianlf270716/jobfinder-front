@@ -1,0 +1,50 @@
+.contenedor{
+    width: 85%;
+    margin-inline: auto;
+    margin-block: 40px;
+    margin-bottom: 80px;
+}
+
+table{
+    width: 100%;
+    text-align: center;
+    margin-block: 20px;
+}
+
+th{
+    width: 33%;
+}
+
+th, .promedio{
+    color: #1561F8;
+    font-weight: 400;
+}
+
+.valorPromedio{
+    color: black;
+}
+
+.promedio{
+    margin-left: 3%;
+    font-size: clamp(18px, 2.5438vw, 100vw);
+}
+
+td, th{
+    font-size: clamp(17px, 2.3438vw, 100vw);
+    padding-block: 12px;
+}
+
+td{
+    font-weight: 600;
+}
+
+.td1, .td2, .th1, .th2{
+    border-right-width: 1px;
+    border-right-color: black;
+    border-right-style: solid;
+}
+
+#flecha-atras{
+    margin-top: 20px;
+    float: right;
+}

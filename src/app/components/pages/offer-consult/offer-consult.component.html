@@ -1,1 +1,52 @@
-<p>offer-consult works!</p>
+<div class="contenido">
+    <div class="contenedor">
+        <h3 class="info">Información de la oferta
+            <a href="/offer-list"><img src="./assets/img/flecha-atras.png" id="flecha-atras" alt="flecha-atras"></a>
+        </h3>
+        <form action="">
+            <div class="row">
+                <div class="col-lg-2">
+                    <label for="txtId">ID</label>
+                    <input id="txtId" type="text" [readOnly]="true" class="dato" [value]="id" />
+                </div>
+                <div class="col-lg-5">
+                    <label for="txtNombre">Nombre</label>
+                    <input id="txtNombre" type="text" [readOnly]="soloLectura" class="dato" [value]="nombre" />
+                </div>
+                <div class="col-lg-5">
+                    <label for="txtCargo">Cargo</label>
+                    <input id="txtCargo" type="text" [readOnly]="soloLectura" class="dato" [value]="cargo" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <label for="txtSalario">Salario</label>
+                    <input id="txtSalario" type="text" [readOnly]="soloLectura" class="dato" [value]="salario" />
+                </div>
+                <div class="col-lg-3">
+                    <label for="txtCiudad">Ciudad</label>
+                    <input id="txtCiudad" type="text" [readOnly]="soloLectura" class="dato" [value]="ciudad" />
+                </div>
+                <div class="col-lg-3">
+                    <label for="txtExperiencia">Años de experiencia</label>
+                    <input id="txtExperiencia" type="text" [readOnly]="soloLectura" class="dato" [value]="experiencia" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <label for="txtFunciones">Funciones</label>
+                    <textarea id="txtFunciones" type="text" [readOnly]="soloLectura" class="dato"></textarea>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4 text-end">
+                    <button [ngClass]="visible" class="btn-azul" id="btnModificar" (click)="habilitarCampos()">Modificar oferta</button>
+                    <button [ngClass]="visible" class="btn-azul" id="btnVerCandidatos" (click)="redirigir()">Ver candidatos</button>
+                    <button [ngClass]="visible" class="btn-eliminar" id="btnEliminar">Eliminar</button>
+
+                    <button [ngClass]="invisible" class="btn-guardar" id="btnGuardar">Guardar</button>
+                    <button [ngClass]="invisible" class="btn-cancelar" id="btnCancelar" (click)="bloquearCampos()">Cancelar</button>
+                </div>
+            </div>
+        </form> 
+    </div>
+</div>

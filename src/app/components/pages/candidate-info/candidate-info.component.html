@@ -1,1 +1,94 @@
-<p>!candidate-info works!</p>
+<div class="contenido">
+    <div class="contenedor">
+        <h3 class="info">Información del candidato
+            <a href="/candidates-list"><img src="./assets/img/flecha-atras.png" id="flecha-atras" alt="flecha-atras"></a>
+        </h3>
+        <form action="">
+            <div class="infoBasica">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="txtNombre">Nombre</label>
+                        <input id="txtNombre" type="text" [readOnly]="true" class="dato" [value]="nombre" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="txtCargo">Correo electrónico</label>
+                        <input id="txtCargo" type="text" [readOnly]="true" class="dato" [value]="correo" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label for="txtSalario">Teléfono</label>
+                        <input id="txtSalario" type="text" [readOnly]="true" class="dato" [value]="telefono" />
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="txtCiudad">Ciudad</label>
+                        <input id="txtCiudad" type="text" [readOnly]="true" class="dato" [value]="ciudad" />
+                    </div>
+                    <div class="col-lg-2">
+                        <label for="txtExperiencia">Género</label>
+                        <input id="txtExperiencia" type="text" [readOnly]="true" class="dato" [value]="genenro" />
+                    </div>
+                    <div class="col-lg-4">
+                        <button class="btn-seleccionar">Seleccionar candidato</button>
+                    </div>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="tblTitulo">Estudios</h3>
+                    <table>  
+                        <thead>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="institucion">Institución</td>
+                                <td class="titulo">título</td>
+                                <td>años</td>
+                            </tr>
+                            <tr>
+                                <td class="institucion">Institución</td>
+                                <td class="titulo">título</td>
+                                <td>años</td>
+                            </tr>
+                            <tr>
+                                <td class="institucion">Institución</td>
+                                <td class="titulo">título</td>
+                                <td>años</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="tblTitulo">Experiencia laboral</h3>
+                    <table>
+                        <thead>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="institucion">Empresa</td>
+                                <td class="titulo">Cargo</td>
+                                <td>años</td>
+                            </tr>
+                            <tr>
+                                <td class="institucion">Empresa</td>
+                                <td class="titulo">Cargo</td>
+                                <td>años</td>
+                            </tr>
+                            <tr>
+                                <td class="institucion">Empresa</td>
+                                <td class="titulo">Cargo</td>
+                                <td>años</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form> 
+    </div>
+</div>

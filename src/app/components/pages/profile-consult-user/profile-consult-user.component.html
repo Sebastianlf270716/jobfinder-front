@@ -1,1 +1,129 @@
-<p>profile-consult-user works!</p>
+<div class="contenido">
+    <div class="contenedor">
+        <h3 class="info">Información del candidato
+            <a href="/home-user"><img src="./assets/img/flecha-atras.png" id="flecha-atras" alt="flecha-atras"></a>
+        </h3>
+        <form action="">
+            <div class="infoBasica">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="txtNombre">Nombre</label>
+                        <input id="txtNombre" type="text" [readOnly]="soloLectura" class="dato" [value]="nombre" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="txtCargo">Correo electrónico</label>
+                        <input id="txtCargo" type="text" [readOnly]="soloLectura" class="dato" [value]="correo" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="txtSalario">Teléfono</label>
+                                <input id="txtSalario" type="text" [readOnly]="soloLectura" class="dato" [value]="telefono" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="txtCiudad">Ciudad</label>
+                                <input id="txtCiudad" type="text" [readOnly]="soloLectura" class="dato" [value]="ciudad" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <label for="txtExperiencia">Género</label>
+                        <div [ngClass]="visible">
+                            <input id="txtExperiencia" type="text" [readOnly]="soloLectura" class="dato" [value]="genero" />
+                        </div>
+                        
+                        <div class="position-relative" [ngClass]="invisible">
+                            <div (click)="desplegarCombo()" class="position-absolute" [ngClass]="cboRegistro">
+                                <span>{{cboGenero}}</span>
+                                <img src="./assets/img/flecha-select.png" alt="flecha" id="flecha-abajo" />
+                            </div> 
+                            <div [ngClass]="cboRegistroDesplegado" class="position-absolute" (click)="plegarCombo()">
+                                <div class="primeraFila">
+                                    <span id="registrarseComo">Género</span>
+                                    <img src="./assets/img/flecha-arriba.png" alt="flecha" id="flecha-arriba" />
+                                </div>
+                                <p class="opcion" (click)="cboGenero='Masculino'">Masculino</p>
+                                <p class="opcion" (click)="cboGenero='Femenino'">Femenino</p>
+                                <p class="opcion" (click)="cboGenero='Otro'">Otro</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button [ngClass]="visible" class="btn-modificar" (click)="habilitarCampos()">Modificar perfil</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <button [ngClass]="visible" class="btn-eliminar">Eliminar perfil</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <button [ngClass]="invisible" class="btn-guardar">Guardar</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <button [ngClass]="invisible" (click)="bloquearCampos()" class="btn-cancelar">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="tblTitulo">Estudios</h3>
+                    <table>  
+                        <thead>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="institucion">Institución</td>
+                                <td class="titulo">título</td>
+                                <td>años</td>
+                            </tr>
+                            <tr>
+                                <td class="institucion">Institución</td>
+                                <td class="titulo">título</td>
+                                <td>años</td>
+                            </tr>
+                            <tr>
+                                <td class="institucion">Institución</td>
+                                <td class="titulo">título</td>
+                                <td>años</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="tblTitulo">Experiencia laboral</h3>
+                    <table>
+                        <thead>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="institucion">Empresa</td>
+                                <td class="titulo">Cargo</td>
+                                <td>años</td>
+                            </tr>
+                            <tr>
+                                <td class="institucion">Empresa</td>
+                                <td class="titulo">Cargo</td>
+                                <td>años</td>
+                            </tr>
+                            <tr>
+                                <td class="institucion">Empresa</td>
+                                <td class="titulo">Cargo</td>
+                                <td>años</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form> 
+    </div>
+</div>

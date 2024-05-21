@@ -1,0 +1,185 @@
+// .contenedor{
+//     min-width: 700px;
+// }
+
+.cboFiltro{
+    padding-inline: 10px;
+    padding-block: 8px;
+    cursor: pointer;
+}
+
+.cboFiltroDesplegado, .cboFiltro{
+    background-color: #1561F8;
+    width: 70%;
+    color: white;
+    border-width: 0;
+    font-size: 20px;
+}
+
+.cboFiltroDesplegado{
+    position: absolute;
+    width: 64.7%;
+}
+
+#flecha-abajo, #flecha-arriba{
+    float: right;
+    margin-top: 4%;
+    width: 25px;
+}
+
+.opcion, .primeraFila{
+    padding-top: 20px;
+    cursor: pointer;
+    margin: 0;
+    padding-inline: 10px;
+    padding-block: 8px;
+}
+
+.opcion{
+    border-top-width: 1px;
+    border-top-color: #8fb4ff8c;
+    border-top-style: solid;
+}
+
+.cboFiltro:hover{
+    background-color: #1561f88c;
+}
+
+.opcion:hover{
+    background-color: #82acff8e;
+}
+
+.ocultar{
+    display: none;
+}
+
+.searchBar{
+    position: relative;
+    margin-block: 15px;
+    margin-inline: auto;
+    width: 70%;
+}
+
+.buscar{
+    width: 90%;
+    padding-block: 3px;
+    padding-inline: 20px;
+    font-size: 24px;
+    background-color: #6E6E6E;
+    color: #B3B3B6;
+    border-color: #A7ABB1;
+    border-style: solid;
+    border-width: 3px;
+}
+
+::placeholder{
+    color: #B3B3B6;
+}
+
+#lupa{
+    float: right;
+    margin-top: 5px;
+}
+
+.listNombre, .propiedad{
+    font-size: clamp(17px, 2.3438vw, 100vw);
+    color: #1561F8;
+}
+
+.valor{
+    font-size: clamp(17px, 2.3438vw, 100vw);
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.columna{
+    margin-top: 20px;
+}
+
+.listEmpresa, .listCiudad{
+    font-size: clamp(17px, 1.9438vw, 100vw);
+}
+.listEmpresa{
+    font-weight: 500;
+}
+.listCiudad{
+    color: #6E6E6E;
+}
+
+.oferta{
+    list-style: none;
+    border-bottom-width: 3px;
+    border-bottom-color: #1561F8;
+    border-bottom-style: solid;
+    padding-inline: 30px;
+    padding-block: 10px;
+    cursor: pointer;
+}
+
+ul{
+    padding: 0px;
+    margin-block: 0;
+}
+
+p, .listNombre{
+    margin-block: 6px;
+}
+
+.dvListaOfertas{
+    width: 50%;
+    padding-bottom: 0px;
+}
+
+.dvOfertas{
+    border-top-color: #1561F8;
+    border-top-style: solid;
+    padding: 0px;
+    display: flex;
+}
+.descripcionOferta{
+    padding-inline: 30px;
+    padding-block: 20px;
+    border-left-color: #1561F8;
+    border-left-style: solid;
+    width: 100%;
+    min-height: 300px;
+}
+
+.nombre{
+    color: #1561F8;
+    font-size: clamp(17px, 3.1438vw, 100vw);
+}
+.empresa, .ciudad{
+    font-size: clamp(17px, 2.3438vw, 100vw);
+}
+.ciudad{
+    color: #6E6E6E;
+}
+.funcion{
+    margin-bottom: 10px;
+}
+.sinSeleccionar{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.btn-aplicar{
+    width: 80%;
+    padding-block: 5px;
+    font-size: clamp(17px, 2.0438vw, 100vw);
+    color: white;
+    border-width: 0px;
+    background-color: #1561F8;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.btn-aplicar:hover{
+    background-color: #5d93ff;
+}
+
+.divBoton{
+    position: relative;
+    min-height: 50px;
+}

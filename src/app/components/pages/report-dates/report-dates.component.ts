@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./report-dates.component.scss']
 })
 export class ReportDatesComponent implements OnInit {
+  fechaInicio: string = "1/1/2000";
+  fechaFin: string = "1/1/2001";
 
   constructor() { }
 
