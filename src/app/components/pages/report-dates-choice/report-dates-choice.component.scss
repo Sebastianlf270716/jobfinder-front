@@ -65,3 +65,7 @@ h2{
 .btn-informes:hover{
     background-color: #5d93ff;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+}
