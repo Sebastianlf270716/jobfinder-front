@@ -103,6 +103,46 @@ export class OfferSearchUserComponent implements OnInit {
     salario: 10000,
     experiencia: 20,
     funciones:["Lavar baños", "Servir tintos"]
+  },
+  {
+    id: 2,
+    nombre: "Diseñador gráfico",
+    empresa: "Diseños S.A",
+    ciudad: "Cali",
+    cargo: "Diseñador",
+    salario: 10000,
+    experiencia: 20,
+    funciones:["Lavar baños", "Servir tintos"]
+  },
+  {
+    id: 2,
+    nombre: "Diseñador gráfico",
+    empresa: "Diseños S.A",
+    ciudad: "Cali",
+    cargo: "Diseñador",
+    salario: 10000,
+    experiencia: 20,
+    funciones:["Lavar baños", "Servir tintos"]
+  },
+  {
+    id: 2,
+    nombre: "Diseñador gráfico",
+    empresa: "Diseños S.A",
+    ciudad: "Cali",
+    cargo: "Diseñador",
+    salario: 10000,
+    experiencia: 20,
+    funciones:["Lavar baños", "Servir tintos"]
+  },
+  {
+    id: 2,
+    nombre: "Diseñador gráfico",
+    empresa: "Diseños S.A",
+    ciudad: "Cali",
+    cargo: "Diseñador",
+    salario: 10000,
+    experiencia: 20,
+    funciones:["Lavar baños", "Servir tintos"]
   }
  ]
 }
