@@ -8,38 +8,44 @@
             <div class="row">
                 <div class="col-lg-12">
                     <label for="txtNombre">Nombre de la empresa</label>
-                    <input type="text" placeholder="Nombre de la empresa" class="dato" id="txtNombre" readonly />
+                    <input type="text" [value]="nombre" class="dato" id="txtNombre" [readOnly]="soloLectura" />
                 </div>
             </div>
             <div class="row">
                 <div class="col-xl-5 campo">
                     <label for="txtCiudad">Ciudad principal</label>
-                    <input type="text" placeholder="Ciudad principal" class="dato" id="txtCiudad" readonly />
+                    <input type="text" [value]="ciudad" class="dato" id="txtCiudad" [readOnly]="soloLectura" />
                 </div>
                 <div class="col-xl-7 campo">
                     <label for="txtActividad">Actividad principal</label>
-                    <input type="text" placeholder="Actividad principal" class="dato" id="txtActividad" readonly />
+                    <input type="text" [value]="actividad" class="dato" id="txtActividad" [readOnly]="soloLectura" />
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <label for="txtCorreo">Correo electrónico</label>
-                    <input type="text" placeholder="Correo electrónico" class="dato" id="txtCorreo" readonly />
+                    <input type="text" [value]="correo" class="dato" id="txtCorreo" [readOnly]="true" />
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <label for="txtDescripcion">Descripción</label>
-                    <input type="text" placeholder="Descripción" class="dato" id="txtDescripcion" readonly />
+                    <input type="text" [value]="descripcion" class="dato" id="txtDescripcion" [readOnly]="soloLectura" />
                 </div>
             </div>
             <div class="row">
                 <div class="row">
                     <div class="col-lg-6">
-                        <button class="btn-modificar">Modificar perfil</button>
+                        <button class="btn-modificar" [ngClass]="visible" (click)="habilitarCampos()">Modificar perfil</button>
                     </div>
                     <div class="col-lg-6">
-                        <button class="btn-eliminar">Eliminar perfil</button>
+                        <button class="btn-eliminar" [ngClass]="visible" >Eliminar perfil</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn-guardar" [ngClass]="invisible" >Guardar</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn-cancelar" [ngClass]="invisible" (click)="bloquearCampos()" >Cancelar</button>
                     </div>
                 </div>
             </div>

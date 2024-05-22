@@ -36,9 +36,7 @@ export class ProfileConsultUserComponent implements OnInit {
   }
 
   public bloquearCampos(){
-    this.soloLectura = true;
-    this.visible = "";
-    this.invisible = "ocultar";
+    location.reload()
   }
 
   constructor() { }

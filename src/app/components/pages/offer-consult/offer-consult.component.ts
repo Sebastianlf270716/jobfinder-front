@@ -26,9 +26,7 @@ export class OfferConsultComponent implements OnInit {
   }
 
   public bloquearCampos(){
-    this.soloLectura = true;
-    this.visible = "";
-    this.invisible = "ocultar";
+    location.reload()
   }
 
   constructor(private ruta: Router) { }
