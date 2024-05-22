@@ -27,6 +27,7 @@ import { ReportGeneralComponent } from './report-general/report-general.componen
 import { ProfileConsultUserComponent } from './profile-consult-user/profile-consult-user.component';
 import { OfferSearchUserComponent } from './offer-search-user/offer-search-user.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { FormsModule } from '@angular/forms';
     MoleculesModule,
     OrganismsModule,
     TemplatesModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   exports: [
     HomeMainComponent

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { EmpleadorService } from 'src/app/services/empleador.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register-employer',
@@ -8,13 +9,15 @@ import { EmpleadorService } from 'src/app/services/empleador.service';
 })
 export class RegisterEmployerComponent implements OnInit {
 
+  @ViewChild('form', { static: false }) form!: NgForm;
+
   mensage: string = '';
 
   formData: any = {
     nombre: '',
     ciudad: '',
     actividad: '',
-    correo: '',
+    email: '',
     descripcion: '',
     contrasenia: ''
   };
@@ -28,6 +31,7 @@ export class RegisterEmployerComponent implements OnInit {
     if(this.validarFormulario()){
       this.empleadorService.registrarEmpleador(this.formData).subscribe({
         next: response => {
+          this.limpiarFormulario();
           this.mensage = response;
         },
         error: error => {
@@ -50,7 +54,7 @@ export class RegisterEmployerComponent implements OnInit {
       this.mensage = 'La actividad no puede tener mas de 50 caracteres';
       return false;
     }
-    if(this.formData.correo.length > 80){
+    if(this.formData.email.length > 80){
       this.mensage = 'El correo no puede tener mas de 80 caracteres';
       return false;
     }
@@ -68,5 +72,16 @@ export class RegisterEmployerComponent implements OnInit {
     }
 
     return true;
+  }
+
+  limpiarFormulario(){
+    this.formData.nombre = '';
+    this.formData.ciudad = '';
+    this.formData.actividad = '';
+    this.formData.email = '';
+    this.formData.descripcion = '';
+    this.formData.contrasenia = '';
+
+    this.form.resetForm();
   }
 }

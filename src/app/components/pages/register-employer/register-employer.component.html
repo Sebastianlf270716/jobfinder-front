@@ -35,12 +35,12 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" class="dvError">
-                        <small *ngIf="correo.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="dvError">
+                        <small *ngIf="email.errors?.['required']" class="text-danger">Este campo es requerido</small>
                     </div>
-                    <input type="text" placeholder="Correo electrónico" 
-                    class="dato" name="correo" [(ngModel)]="formData.correo"
-                    required #correo="ngModel"/>
+                    <input type="email" placeholder="Correo electrónico" 
+                    class="dato" name="email" [(ngModel)]="formData.email"
+                    required #email="ngModel"/>
                 </div>
             </div>
             <div class="row">
