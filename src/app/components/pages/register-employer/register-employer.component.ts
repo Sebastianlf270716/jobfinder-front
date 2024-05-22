@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpleadorService } from 'src/app/services/empleador.service';
 
 @Component({
   selector: 'app-register-employer',
@@ -18,14 +19,21 @@ export class RegisterEmployerComponent implements OnInit {
     contrasenia: ''
   };
 
-  constructor() { }
+  constructor(private empleadorService: EmpleadorService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
     if(this.validarFormulario()){
-      //AQUI SE LLAMA AL SERVICIO
+      this.empleadorService.registrarEmpleador(this.formData).subscribe({
+        next: response => {
+          this.mensage = response;
+        },
+        error: error => {
+          this.mensage = error;
+        }
+      })
     }
   }
 
