@@ -33,12 +33,12 @@
             </div>
             <div class="row">
                 <div class="col-lg-6 campo">
-                    <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" class="dvError">
-                        <small *ngIf="correo.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="dvError">
+                        <small *ngIf="email.errors?.['required']" class="text-danger">Este campo es requerido</small>
                     </div>
                     <input type="text" placeholder="Correo electrónico" class="dato" 
-                    name="correo" [(ngModel)]="formData.correo"
-                    required #correo="ngModel"/>
+                    name="email" [(ngModel)]="formData.email"
+                    required #email="ngModel"/>
                 </div>
                 <div class="col-lg-3 campo">
                     <div *ngIf="contrasenia.invalid && (contrasenia.dirty || contrasenia.touched)" class="dvError">
@@ -63,6 +63,15 @@
                         <p class="opcion" (click)="selectGenero('Otro')">Otro</p>
                     </div>    
                 </div>
+            </div>
+            <div class="row">
+                <div *ngIf="perfil.invalid && (perfil.dirty || perfil.touched)" class="dvError">
+                    <small *ngIf="perfil.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                </div>
+                <div class="col-12">
+                    <textarea class="form-control dato" placeholder="Pefil" name="perfil" 
+                    [(ngModel)]="formData.perfil" required #perfil="ngModel"></textarea>
+                </div>         
             </div>
             <div class="row my-2">
                 <div class="col-lg-6">

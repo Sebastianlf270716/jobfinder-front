@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-register-user',
@@ -23,9 +24,10 @@ export class RegisterUserComponent implements OnInit {
     nombre: '',
     telefono: '',
     ciudad: '',
-    correo: '',
+    email: '',
     contrasenia: '',
     genero: this.genero,
+    perfil: '',
     curriculum: this.curriculum
   }
 
@@ -41,7 +43,7 @@ export class RegisterUserComponent implements OnInit {
     tiempo: null
   }
 
-  constructor() { }
+  constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
   }
@@ -78,9 +80,17 @@ export class RegisterUserComponent implements OnInit {
   }
 
   onSubmit(){
+    console.log(this.formData);
     if(this.validarFormulario()){
-      //AQUI SE LLAMA AL SERVICIO
-      console.log(this.formData);
+      this.usuarioService.registrarUsuario(this.formData).subscribe({
+        next: response => {
+          console.log(response);
+          this.mensage = response;
+        },
+        error: error => {
+          this.mensage = error;
+        }
+      })
     }
   }
 
@@ -131,7 +141,7 @@ export class RegisterUserComponent implements OnInit {
       this.mensage = 'La ciudad no puede tener mas de 30 caracteres';
       return false;
     }
-    if(this.formData.correo.length > 80){
+    if(this.formData.email.length > 80){
       this.mensage = 'El correo no puede tener mas de 80 caracteres';
       return false;
     }
@@ -144,7 +154,10 @@ export class RegisterUserComponent implements OnInit {
       return false;
     }
     if(this.formData.genero === 'Género'){
-      this.mensage = 'Por favor, elija un género'
+      this.mensage = 'Por favor, elija un género';
+    }
+    if(this.formData.perfil.length > 250){
+      this.mensage = 'El perfil no puede tener mas de 250 caracteres';
     }
 
     return true;
