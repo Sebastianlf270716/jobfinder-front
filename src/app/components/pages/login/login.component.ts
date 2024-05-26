@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
     contrasenia: ''
   }
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -35,11 +36,24 @@ export class LoginComponent implements OnInit {
 
   onSubmit(tipoUsuario: string){
     this.tipoUsuario = tipoUsuario;
+    let ruta="";
+    if (tipoUsuario=="empleador") {
+      ruta = "home-employer";
+    }else if (tipoUsuario=="usuario") {
+      ruta = "home-user";
+    }else{
+      ruta = "home-admin";
+    }
     if(this.validarLogin()){
       this.loginService.iniciarSesion(this.formLogin, this.tipoUsuario).subscribe({
         next: response => {
-          //AQUI SE TRABAJA CON response
-          console.log(response);
+          if (response!=null) {
+            console.log(response);
+            localStorage.setItem('perfil', JSON.stringify(response[0]));
+            this.router.navigate([ruta]);
+          }else{
+            alert("Correo o contraseña incorrectos");
+          }
         },
         error: error => {
           this.mensage = error;

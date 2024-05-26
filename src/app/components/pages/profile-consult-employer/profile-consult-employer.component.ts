@@ -27,9 +27,25 @@ export class ProfileConsultEmployerComponent implements OnInit {
     location.reload()
   }
 
+  getItem(key: string): any {
+    const item = localStorage.getItem(key);
+    return item ? JSON.parse(item) : null;
+  }
+
+  llenarDatos(){
+    const empleador = this.getItem('perfil');
+    console.log(empleador);
+    this.nombre = empleador.nombre;
+    this.ciudad = empleador.ciudad;
+    this.actividad = empleador.actividad;
+    this.correo = empleador.email;
+    this.descripcion = empleador.descripcion;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+    this.llenarDatos();
   }
 
 }
