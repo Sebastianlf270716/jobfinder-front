@@ -59,6 +59,7 @@ export class ProfileConsultUserComponent implements OnInit {
     this.correo = usuario.email;
     this.genero = usuario.genero;
     this.idCurriculum = usuario.curriculum_id
+    this.perfil = usuario.perfil
   }
 
   consultarCurriculum(){
