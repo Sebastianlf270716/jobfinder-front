@@ -1,11 +1,44 @@
 <div class="contenido">
     <div class="contenedor">
         <h3 class="iniciar-sesion">INICIAR SESIÓN</h3>
-        <input type="text" placeholder="Correo electrónico" class="dato" />
-        <input type="password" placeholder="Contraseña" class="dato" />
-        <div style="width: 23%; margin: auto; min-width: 300px;">
-            <button class="btn-iniciar">Iniciar sesión</button>
+        <div *ngIf="mensage !== ''" class="dvErrorGeneral">
+            <p class="text-error">{{mensage}}</p>
         </div>
+        <form>
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="dvError">
+                <small *ngIf="email.errors?.['required']" class="text-danger">Este campo es requerido</small>
+            </div>
+            <input type="email" placeholder="Correo electrónico" class="dato" 
+            id="txtEmail" name="email" [(ngModel)]="formLogin.email"
+            #email="ngModel" required/>
+            <div *ngIf="contrasenia.invalid && (contrasenia.dirty || contrasenia.touched)" class="dvError">
+                <small *ngIf="contrasenia.errors?.['required']" class="text-danger">Este campo es requerido</small>
+            </div>
+            <input type="password" placeholder="Contraseña" class="dato" 
+            id="txtContrasenia" name="contrasenia" [(ngModel)]="formLogin.contrasenia"
+            #contrasenia="ngModel" required/>
+            <div class="inputLogin">
+                <div (click)="desplegarCombo()" [ngClass]="cboLogin">
+                    <span>Iniciar sesión como:</span>
+                    <img src="./assets/img/flecha-select.png" alt="flecha" id="flecha-abajo" />
+                </div>
+                <div [ngClass]="cboLoginDesplegado" (click)="plegarCombo()">
+                    <div class="primeraFila">
+                        <span id="registrarseComo">Iniciar sesión como:</span>
+                        <img src="./assets/img/flecha-arriba.png" alt="flecha" id="flecha-arriba" />
+                    </div>
+                    <a (click)="onSubmit('empleador')">
+                        <p class="opcion">Empleador</p>
+                    </a>
+                    <a (click)="onSubmit('usuario')">
+                        <p class="opcion">Usuario</p>
+                    </a>
+                    <a (click)="onSubmit('administrador')">
+                        <p class="opcion">Administrador</p>
+                    </a>
+                </div>
+            </div>
+        </form>
         <h4 class="registrarse">
             ¿No tienes cuenta? <a href="/register-option">Regístrate</a>
         </h4>

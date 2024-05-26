@@ -55,6 +55,74 @@
     padding-block: 15px;
 }
 
+.registrarse a {
+    color: #1561F8;
+}
+
 a{
     text-decoration: none;
+    color: inherit;
+}
+
+.cboLogin{
+    background-color: #1561F8;
+    width: 70%;
+    color: white;
+    border-width: 0;
+    font-size: clamp(17px, 2.3438vw, 100vw);
+    padding-inline: 35px;
+    padding-block: 25px;
+    margin-top: 55px;
+    margin-inline: auto;
+    cursor: pointer;
+}
+
+.cboLoginDesplegado{
+    background-color: #1561F8;
+    width: 70%;
+    color: white;
+    border-width: 0;
+    font-size: clamp(17px, 2.3438vw, 100vw);
+    margin-top: 55px;
+    margin-inline: auto;
+}
+
+.cboLogin:hover{
+    background-color: #1561f88c;
+}
+
+#flecha-abajo, #flecha-arriba{
+    float: right;
+    margin-top: 4%;
+    width: 9%;
+}
+
+.opcion, .primeraFila{
+    padding-top: 20px;
+    cursor: pointer;
+    margin: 0;
+    padding-inline: 35px;
+    padding-block: 25px;
+}
+
+.opcion{
+    border-top-width: 1px;
+    border-top-color: #8fb4ff8c;
+    border-top-style: solid;
+}
+
+.opcion:hover{
+    background-color: #82acff8e;
+}
+
+.ocultar{
+    display: none;
+}
+
+.dvErrorGeneral {
+    text-align: center;
+}
+
+.text-error {
+    color: red;
 }
