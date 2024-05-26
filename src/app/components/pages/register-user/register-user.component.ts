@@ -86,6 +86,13 @@ export class RegisterUserComponent implements OnInit {
         next: response => {
           console.log(response);
           this.mensage = response;
+          this.genero = "Género";
+          this.estudios = [];
+          this.experiencias = [];
+          this.curriculum = {estudios: this.estudios, experiencias: this.experiencias}
+          this.formData = {nombre: '', telefono: '', ciudad: '', email: '',
+          contrasenia: '', genero: this.genero, perfil: '',
+          curriculum: this.curriculum}
         },
         error: error => {
           this.mensage = error;
