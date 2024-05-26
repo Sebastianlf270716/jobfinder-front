@@ -1,3 +1,4 @@
+import { CurriculumService } from 'src/app/services/curriculum.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,6 +13,10 @@ export class ProfileConsultUserComponent implements OnInit {
   ciudad: string = "";
   genero: string = "";
   cboGenero: string = "Género";
+  perfil: string = "";
+  estudios: any[]=[];
+  experiencias: any[]=[];
+  idCurriculum: Number = 0;
 
   soloLectura: boolean = true;
   visible: string = "";
@@ -39,9 +44,48 @@ export class ProfileConsultUserComponent implements OnInit {
     location.reload()
   }
 
-  constructor() { }
+  constructor(private curriculumService: CurriculumService) { }
+
+  getItem(key: string): any {
+    const item = localStorage.getItem(key);
+    return item ? JSON.parse(item) : null;
+  }
+
+  llenarDatosPerfil(){
+    const usuario = this.getItem('perfil');
+    this.nombre = usuario.nombre;
+    this.ciudad = usuario.ciudad;
+    this.telefono = usuario.telefono;
+    this.correo = usuario.email;
+    this.genero = usuario.genero;
+    this.idCurriculum = usuario.curriculum_id
+  }
+
+  consultarCurriculum(){
+    this.curriculumService.consultarEstudios(this.idCurriculum).subscribe({
+      next: response =>{
+        console.log(response);
+        this.estudios=response;
+      },
+      error: error =>{
+        alert(error);
+      }
+    })
+
+    this.curriculumService.consultarExperiencias(this.idCurriculum).subscribe({
+      next: response =>{
+        console.log(response);
+        this.experiencias=response;
+      },
+      error: error =>{
+        alert(error);
+      }
+    })
+  }
 
   ngOnInit(): void {
+    this.llenarDatosPerfil();
+    this.consultarCurriculum();
   }
 
 }

@@ -78,20 +78,10 @@
                             <th></th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="institucion">Institución</td>
-                                <td class="titulo">título</td>
-                                <td>años</td>
-                            </tr>
-                            <tr>
-                                <td class="institucion">Institución</td>
-                                <td class="titulo">título</td>
-                                <td>años</td>
-                            </tr>
-                            <tr>
-                                <td class="institucion">Institución</td>
-                                <td class="titulo">título</td>
-                                <td>años</td>
+                            <tr *ngFor="let estudio of estudios">
+                                <td class="institucion">{{estudio.institucion}}</td>
+                                <td class="titulo">{{estudio.titulo}}</td>
+                                <td>{{estudio.anio}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -105,20 +95,10 @@
                             <th></th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="institucion">Empresa</td>
-                                <td class="titulo">Cargo</td>
-                                <td>años</td>
-                            </tr>
-                            <tr>
-                                <td class="institucion">Empresa</td>
-                                <td class="titulo">Cargo</td>
-                                <td>años</td>
-                            </tr>
-                            <tr>
-                                <td class="institucion">Empresa</td>
-                                <td class="titulo">Cargo</td>
-                                <td>años</td>
+                            <tr *ngFor="let experiencia of experiencias">
+                                <td class="institucion">{{experiencia.empresa}}</td>
+                                <td class="titulo">{{experiencia.cargo}}</td>
+                                <td>{{experiencia.anios}}</td>
                             </tr>
                         </tbody>
                     </table>
