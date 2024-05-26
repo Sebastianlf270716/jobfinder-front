@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
       this.loginService.iniciarSesion(this.formLogin, this.tipoUsuario).subscribe({
         next: response => {
           //AQUI SE TRABAJA CON response
+          console.log(response);
         },
         error: error => {
           this.mensage = error;
