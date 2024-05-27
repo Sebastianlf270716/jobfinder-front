@@ -22,7 +22,9 @@ export class OfferPostComponent implements OnInit {
     salario: null,
     ciudad: '',
     anios_experiencia: null,
-    funciones: this.funciones
+    funciones: this.funciones,
+    usuario_id: null,
+    tipo_perfil: ''
   }
 
   public redirigir(){
@@ -33,6 +35,11 @@ export class OfferPostComponent implements OnInit {
   
 
   ngOnInit(): void {
+  }
+
+  getItem(key: string): any {
+    const item = localStorage.getItem(key);
+    return item ? JSON.parse(item) : null;
   }
 
   agregarFuncion(){
@@ -46,13 +53,17 @@ export class OfferPostComponent implements OnInit {
   }
 
   onSubmit(){
+    const usuario = this.getItem('perfil');
+    this.formOffer.usuario_id = usuario.id
+    this.formOffer.tipo_perfil = usuario.tipo_perfil;
+    console.log(this.formOffer);
     if(this.validarFormulario()){
       this.ofertaService.crearOferta(this.formOffer).subscribe({
         next: response => {
           this.mensage = response;
           this.funciones = [];
           this.formOffer = {nombre: '', cargo: '', salario: null, ciudad: '',
-          anios_experiencia: null, funciones: this.funciones}
+          anios_experiencia: null, funciones: this.funciones, usuario_id: null, tipo_perfil: ''}
           this.form.resetForm();
         },
         error: error => {
