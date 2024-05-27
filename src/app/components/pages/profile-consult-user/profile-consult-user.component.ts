@@ -1,4 +1,5 @@
 import { CurriculumService } from 'src/app/services/curriculum.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-consult-user.component.scss']
 })
 export class ProfileConsultUserComponent implements OnInit {
+  id: Number = 0;
   nombre: string = "";
   correo: string = "";
   telefono: string = "";
@@ -44,7 +46,7 @@ export class ProfileConsultUserComponent implements OnInit {
     location.reload()
   }
 
-  constructor(private curriculumService: CurriculumService) { }
+  constructor(private curriculumService: CurriculumService, private usuarioService: UsuarioService) { }
 
   getItem(key: string): any {
     const item = localStorage.getItem(key);
@@ -53,6 +55,7 @@ export class ProfileConsultUserComponent implements OnInit {
 
   llenarDatosPerfil(){
     const usuario = this.getItem('perfil');
+    this.id = usuario.id
     this.nombre = usuario.nombre;
     this.ciudad = usuario.ciudad;
     this.telefono = usuario.telefono;
@@ -77,6 +80,18 @@ export class ProfileConsultUserComponent implements OnInit {
       next: response =>{
         console.log(response);
         this.experiencias=response;
+      },
+      error: error =>{
+        alert(error);
+      }
+    })
+  }
+
+  eliminarUsuario(){
+    this.usuarioService.eliminarUsuario(this.id).subscribe({
+      next: result =>{
+        alert(result);
+        localStorage.removeItem('perfil');
       },
       error: error =>{
         alert(error);
