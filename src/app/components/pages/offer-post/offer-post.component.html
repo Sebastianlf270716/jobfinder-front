@@ -3,35 +3,66 @@
         <h3 class="info">Información de la oferta
             <a href="/home-employer"><img src="./assets/img/flecha-atras.png" id="flecha-atras" alt="flecha-atras"></a>
         </h3>
-        <form action="">
+        <div *ngIf="mensage !== ''" class="dvErrorGeneral">
+            <p class="text-error">{{mensage}}</p>
+        </div>
+        <form (submit)="onSubmit()" #form="ngForm">
             <div class="row">
                 <div class="col-lg-5">
                     <label for="txtNombre">Nombre</label>
-                    <input id="txtNombre" type="text" class="dato" placeholder="Nombre" />
+                    <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="dvError">
+                        <small *ngIf="nombre.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input id="txtNombre" type="text" class="dato" placeholder="Nombre" 
+                    name="nombre" [(ngModel)]="formOffer.nombre"
+                    required #nombre="ngModel"/>
                 </div>
                 <div class="col-lg-5">
                     <label for="txtCargo">Cargo</label>
-                    <input id="txtCargo" type="text" class="dato" placeholder="Cargo" />
+                    <div *ngIf="cargo.invalid && (cargo.dirty || cargo.touched)" class="dvError">
+                        <small *ngIf="cargo.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input id="txtCargo" type="text" class="dato" placeholder="Cargo" 
+                    name="cargo" [(ngModel)]="formOffer.cargo"
+                    required #cargo="ngModel"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-3">
                     <label for="txtSalario">Salario</label>
-                    <input id="txtSalario" type="text" class="dato" placeholder="Salario" />
+                    <div *ngIf="salario.invalid && (salario.dirty || salario.touched)" class="dvError">
+                        <small *ngIf="salario.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input id="txtSalario" type="number" class="dato" placeholder="Salario" 
+                    name="salario" [(ngModel)]="formOffer.salario"
+                    required #salario="ngModel"/>
                 </div>
                 <div class="col-lg-3">
                     <label for="txtCiudad">Ciudad</label>
-                    <input id="txtCiudad" type="text" class="dato" placeholder="Ciudad" />
+                    <div *ngIf="ciudad.invalid && (ciudad.dirty || ciudad.touched)" class="dvError">
+                        <small *ngIf="ciudad.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input id="txtCiudad" type="text" class="dato" placeholder="Ciudad" 
+                    name="ciudad" [(ngModel)]="formOffer.ciudad"
+                    required #ciudad="ngModel"/>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 width__100">
                     <label for="txtExperiencia">Años de experiencia</label>
-                    <input id="txtExperiencia" type="text" class="dato" placeholder="Experiencia" />
+                    <div *ngIf="experiencia.invalid && (experiencia.dirty || experiencia.touched)" class="dvError">
+                        <small *ngIf="experiencia.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input id="txtExperiencia" type="number" class="dato" placeholder="Experiencia" 
+                    name="experiencia" [(ngModel)]="formOffer.anios_experiencia"
+                    required #experiencia="ngModel"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-7">
-                    <label for="txtFunciones">Funciones</label>
-                    <textarea id="txtFunciones" type="text" class="dato" placeholder="Funciones"></textarea>
+                    <label for="txtFuncion">Funciones</label>
+                    <input id="txtFuncion" type="text" class="dato" placeholder="Función"
+                    name="offerFuncion" [(ngModel)]="offerFuncion"/>
+                    <button class="btn-agregar" id="btnAgregar" (click)="agregarFuncion()" type="button">
+                        Agregar función</button>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-4 text-end">

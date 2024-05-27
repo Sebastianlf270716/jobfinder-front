@@ -26,10 +26,6 @@
     margin-bottom: 12px;
 }
 
-#txtFunciones{
-    min-height: 190px;
-}
-
 .info{
     color: #1561F8;
     margin-bottom: 20px;
@@ -70,6 +66,26 @@ button{
 .btn-cancelar:hover{
     background-color: #A7ABB1;
 }
+
+.btn-agregar{
+    background-color: #1561F8;
+}
+.btn-agregar:hover{
+    background-color: #5d93ff;
+}
+
 ::placeholder{
     color: rgb(194, 194, 194);
+}
+
+.width__100 {
+    min-width: 300px !important;
+}
+
+.dvErrorGeneral {
+    text-align: center;
+}
+
+.text-error {
+    color: red;
 }
