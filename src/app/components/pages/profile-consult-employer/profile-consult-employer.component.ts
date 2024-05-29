@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpleadorService } from 'src/app/services/empleador.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-profile-consult-employer',
@@ -35,6 +37,7 @@ export class ProfileConsultEmployerComponent implements OnInit {
   llenarDatos(){
     const empleador = this.getItem('perfil');
     console.log(empleador);
+    this.id = empleador.id;
     this.nombre = empleador.nombre;
     this.ciudad = empleador.ciudad;
     this.actividad = empleador.actividad;
@@ -42,7 +45,20 @@ export class ProfileConsultEmployerComponent implements OnInit {
     this.descripcion = empleador.descripcion;
   }
 
-  constructor() { }
+  eliminarEmpleador(){
+    this.empleadorService.eliminarEmpleador(this.id).subscribe({
+      next: result =>{
+        alert(result);
+        localStorage.removeItem('perfil');
+        this.router.navigate(["home"]);
+      },
+      error: error =>{
+        alert(error);
+      }
+    })
+  }
+
+  constructor(private empleadorService: EmpleadorService, private router:Router) { }
 
   ngOnInit(): void {
     this.llenarDatos();

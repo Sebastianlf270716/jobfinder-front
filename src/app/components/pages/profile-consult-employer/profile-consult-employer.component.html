@@ -39,7 +39,7 @@
                         <button class="btn-modificar" [ngClass]="visible" (click)="habilitarCampos()">Modificar perfil</button>
                     </div>
                     <div class="col-lg-6">
-                        <button class="btn-eliminar" [ngClass]="visible" >Eliminar perfil</button>
+                        <button class="btn-eliminar" [ngClass]="visible" (click)="eliminarEmpleador()" >Eliminar perfil</button>
                     </div>
                     <div class="col-lg-6">
                         <button class="btn-guardar" [ngClass]="invisible" >Guardar</button>

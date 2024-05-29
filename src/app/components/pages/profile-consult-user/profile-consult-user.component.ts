@@ -1,6 +1,7 @@
 import { CurriculumService } from 'src/app/services/curriculum.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-profile-consult-user',
@@ -46,7 +47,7 @@ export class ProfileConsultUserComponent implements OnInit {
     location.reload()
   }
 
-  constructor(private curriculumService: CurriculumService, private usuarioService: UsuarioService) { }
+  constructor(private curriculumService: CurriculumService, private usuarioService: UsuarioService, private router:Router) { }
 
   getItem(key: string): any {
     const item = localStorage.getItem(key);
@@ -92,6 +93,7 @@ export class ProfileConsultUserComponent implements OnInit {
       next: result =>{
         alert(result);
         localStorage.removeItem('perfil');
+        this.router.navigate(['home']);
       },
       error: error =>{
         alert(error);
