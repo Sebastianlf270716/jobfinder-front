@@ -1,6 +1,8 @@
 import { CurriculumService } from 'src/app/services/curriculum.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-consult-user',
@@ -8,23 +10,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-consult-user.component.scss']
 })
 export class ProfileConsultUserComponent implements OnInit {
-  id: Number = 0;
-  nombre: string = "";
-  correo: string = "";
-  telefono: string = "";
-  ciudad: string = "";
-  genero: string = "";
-  cboGenero: string = "Género";
-  perfil: string = "";
-  estudios: any[]=[];
-  experiencias: any[]=[];
-  idCurriculum: Number = 0;
+
+  formulario: FormGroup;
+  curriculum: any = {
+    estudios: [],
+    experiencias: []
+  }
 
   soloLectura: boolean = true;
   visible: string = "";
   invisible: string = "ocultar";
   cboRegistro:string = "cboRegistro";
   cboRegistroDesplegado:string = "ocultar";
+  cboGenero: string = "";
+
+  experiencias:any[] = []
+  estudios: any[] = []
+
 
   desplegarCombo() {
     this.cboRegistro="ocultar"
@@ -46,7 +48,19 @@ export class ProfileConsultUserComponent implements OnInit {
     location.reload()
   }
 
-  constructor(private curriculumService: CurriculumService, private usuarioService: UsuarioService) { }
+  constructor(private curriculumService: CurriculumService, private usuarioService: UsuarioService, private router:Router, private fb: FormBuilder) {
+    this.formulario = this.fb.group({
+      id: 0,
+      nombre: '',
+      email: '',
+      telefono: '',
+      ciudad: '',
+      genero: '',
+      perfil: '',
+      curriculum_id: 0,
+      curriculum: this.curriculum
+    });
+   }
 
   getItem(key: string): any {
     const item = localStorage.getItem(key);
@@ -55,20 +69,25 @@ export class ProfileConsultUserComponent implements OnInit {
 
   llenarDatosPerfil(){
     const usuario = this.getItem('perfil');
-    this.id = usuario.id
-    this.nombre = usuario.nombre;
-    this.ciudad = usuario.ciudad;
-    this.telefono = usuario.telefono;
-    this.correo = usuario.email;
-    this.genero = usuario.genero;
-    this.idCurriculum = usuario.curriculum_id
-    this.perfil = usuario.perfil
+    this.cboGenero=usuario.genero
+
+    this.formulario.patchValue({
+      id: usuario.id,
+      nombre: usuario.nombre,
+      email: usuario.email,
+      telefono: usuario.telefono,
+      ciudad: usuario.ciudad,
+      genero: usuario.genero,
+      perfil: usuario.perfil,
+      curriculum_id: usuario.curriculum_id,
+      curriculum: this.curriculum
+    });
+    console.log(this.formulario.value);
   }
 
   consultarCurriculum(){
-    this.curriculumService.consultarEstudios(this.idCurriculum).subscribe({
+    this.curriculumService.consultarEstudios(this.formulario.value.curriculum_id).subscribe({
       next: response =>{
-        console.log(response);
         this.estudios=response;
       },
       error: error =>{
@@ -76,9 +95,8 @@ export class ProfileConsultUserComponent implements OnInit {
       }
     })
 
-    this.curriculumService.consultarExperiencias(this.idCurriculum).subscribe({
+    this.curriculumService.consultarExperiencias(this.formulario.value.curriculum_id).subscribe({
       next: response =>{
-        console.log(response);
         this.experiencias=response;
       },
       error: error =>{
@@ -88,15 +106,30 @@ export class ProfileConsultUserComponent implements OnInit {
   }
 
   eliminarUsuario(){
-    this.usuarioService.eliminarUsuario(this.id).subscribe({
+    this.usuarioService.eliminarUsuario(this.formulario.value.id).subscribe({
       next: result =>{
         alert(result);
         localStorage.removeItem('perfil');
+        this.router.navigate(['home']);
       },
       error: error =>{
         alert(error);
       }
     })
+  }
+
+  actualizarUsuario(){
+    this.formulario.value.genero=this.cboGenero;
+    this.usuarioService.actualizarUsuario(this.formulario.value).subscribe({
+      next: response => {
+        alert(response);
+        localStorage.setItem('perfil', JSON.stringify(this.formulario.value));
+        location.reload();
+      },
+      error: error =>{
+        alert(error);
+      }
+    });
   }
 
   ngOnInit(): void {

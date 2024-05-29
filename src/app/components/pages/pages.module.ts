@@ -28,6 +28,7 @@ import { ProfileConsultUserComponent } from './profile-consult-user/profile-cons
 import { OfferSearchUserComponent } from './offer-search-user/offer-search-user.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReportDatesComponent,
     HomeAdminComponent,
     HomeUserComponent,
-    OfferSearchUserComponent
+    OfferSearchUserComponent,
   ],
   imports: [
     CommonModule,
@@ -61,7 +62,8 @@ import { HttpClientModule } from '@angular/common/http';
     OrganismsModule,
     TemplatesModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports: [
     HomeMainComponent
