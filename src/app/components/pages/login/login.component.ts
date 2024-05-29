@@ -48,7 +48,6 @@ export class LoginComponent implements OnInit {
       this.loginService.iniciarSesion(this.formLogin, this.tipoUsuario).subscribe({
         next: response => {
           if (response!=null) {
-            console.log(response);
             localStorage.setItem('perfil', JSON.stringify(response[0]));
             this.router.navigate([ruta]);
           }else{
