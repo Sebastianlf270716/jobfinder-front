@@ -18,4 +18,8 @@ export class EmpleadorService {
   eliminarEmpleador(id:Number): Observable<any>{
     return this.http.delete(`${this.apiUrl}?id=${id}`);
   }
+
+  actualizarEmpleador(formData: any): Observable<any>{
+    return this.http.put(`${this.apiUrl}`, formData);
+  }
 }

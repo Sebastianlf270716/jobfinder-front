@@ -3,35 +3,35 @@
         <h3 class="info">Información del perfil
             <a href="/home-user"><img src="./assets/img/flecha-atras.png" id="flecha-atras" alt="flecha-atras"></a>
         </h3>
-        <form action="">
+        <form [formGroup]="formulario">
             <div class="infoBasica">
                 <div class="row">
                     <div class="col-lg-6">
                         <label for="txtNombre">Nombre</label>
-                        <input id="txtNombre" type="text" [readOnly]="soloLectura" class="dato" [value]="nombre" />
+                        <input id="txtNombre" type="text" [readOnly]="soloLectura" class="dato" formControlName="nombre" />
                     </div>
                     <div class="col-lg-6">
-                        <label for="txtCargo">Correo electrónico</label>
-                        <input id="txtCargo" type="text" [readOnly]="true" class="dato" [value]="correo" />
+                        <label for="txtCorreo">Correo electrónico</label>
+                        <input id="txtCorreo" type="text" [readOnly]="true" class="dato" formControlName="email" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="txtSalario">Teléfono</label>
-                                <input id="txtSalario" type="text" [readOnly]="soloLectura" class="dato" [value]="telefono" />
+                                <label for="txtTelefono">Teléfono</label>
+                                <input id="txtTelefono" type="text" [readOnly]="soloLectura" class="dato" formControlName="telefono" />
                             </div>
                             <div class="col-lg-6">
                                 <label for="txtCiudad">Ciudad</label>
-                                <input id="txtCiudad" type="text" [readOnly]="soloLectura" class="dato" [value]="ciudad" />
+                                <input id="txtCiudad" type="text" [readOnly]="soloLectura" class="dato" formControlName="ciudad" />
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-2">
-                        <label for="txtExperiencia">Género</label>
+                        <label for="txtGenero">Género</label>
                         <div [ngClass]="visible">
-                            <input id="txtExperiencia" type="text" [readOnly]="soloLectura" class="dato" [value]="genero" />
+                            <input id="txtGenero" type="text" [readOnly]="soloLectura" class="dato" formControlName="genero" />
                         </div>
                         
                         <div class="position-relative" [ngClass]="invisible">
@@ -59,7 +59,7 @@
                                 <button [ngClass]="visible" class="btn-eliminar" (click)="eliminarUsuario()" >Eliminar perfil</button>
                             </div>
                             <div class="col-lg-6">
-                                <button [ngClass]="invisible" class="btn-guardar">Guardar</button>
+                                <button [ngClass]="invisible" class="btn-guardar" (click)="actualizarUsuario()">Guardar</button>
                             </div>
                             <div class="col-lg-6">
                                 <button [ngClass]="invisible" (click)="bloquearCampos()" class="btn-cancelar">Cancelar</button>
@@ -70,7 +70,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <label for="txtPerfil">Perfil</label>
-                        <input id="txtPerfil" type="text" [readOnly]="soloLectura" class="dato" [value]="perfil" />
+                        <input id="txtPerfil" type="text" [readOnly]="soloLectura" class="dato" formControlName="perfil" />
                     </div>
                 </div>
             </div>    

@@ -4,33 +4,33 @@
             <h3 class="info-perfil">Información del perfil</h3>
             <a href="/home-employer"><img src="./assets/img/flecha-atras.png" class="imagen" alt="flecha-atras"></a>
         </div>
-        <form>
+        <form [formGroup]="formulario">
             <div class="row">
                 <div class="col-lg-12">
                     <label for="txtNombre">Nombre de la empresa</label>
-                    <input type="text" [value]="nombre" class="dato" id="txtNombre" [readOnly]="soloLectura" />
+                    <input type="text" class="dato" id="txtNombre" [readOnly]="soloLectura"name="nombre" formControlName="nombre" />
                 </div>
             </div>
             <div class="row">
                 <div class="col-xl-5 campo">
                     <label for="txtCiudad">Ciudad principal</label>
-                    <input type="text" [value]="ciudad" class="dato" id="txtCiudad" [readOnly]="soloLectura" />
+                    <input type="text" class="dato" id="txtCiudad" [readOnly]="soloLectura" name="ciudad" formControlName="ciudad" />
                 </div>
                 <div class="col-xl-7 campo">
                     <label for="txtActividad">Actividad principal</label>
-                    <input type="text" [value]="actividad" class="dato" id="txtActividad" [readOnly]="soloLectura" />
+                    <input type="text" class="dato" id="txtActividad" [readOnly]="soloLectura" name="actividad" formControlName="actividad" />
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <label for="txtCorreo">Correo electrónico</label>
-                    <input type="text" [value]="correo" class="dato" id="txtCorreo" [readOnly]="true" />
+                    <input type="text" class="dato" id="txtCorreo" [readOnly]="true" formControlName="email" />
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <label for="txtDescripcion">Descripción</label>
-                    <input type="text" [value]="descripcion" class="dato" id="txtDescripcion" [readOnly]="soloLectura" />
+                    <input type="text" class="dato" id="txtDescripcion" [readOnly]="soloLectura" name="descripcion" formControlName="descripcion" />
                 </div>
             </div>
             <div class="row">
@@ -42,7 +42,7 @@
                         <button class="btn-eliminar" [ngClass]="visible" (click)="eliminarEmpleador()" >Eliminar perfil</button>
                     </div>
                     <div class="col-lg-6">
-                        <button class="btn-guardar" [ngClass]="invisible" >Guardar</button>
+                        <button class="btn-guardar" [ngClass]="invisible" (click)="actualizarEmpleador()" >Guardar</button>
                     </div>
                     <div class="col-lg-6">
                         <button class="btn-cancelar" [ngClass]="invisible" (click)="bloquearCampos()" >Cancelar</button>
