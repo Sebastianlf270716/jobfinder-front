@@ -7,21 +7,9 @@
             </th>
         </thead>
         <tbody>
-            <tr (click)="redirigirOferta()">
-                <td class="nombre">Nombre</td>
-                <td>Ciudad
-                    <a href="/offer-report"><button class="btn-estadisticas">Ver estadísticas</button></a>
-                </td>
-            </tr>
-            <tr (click)="redirigirOferta()">
-                <td class="nombre">Nombre</td>
-                <td>Ciudad
-                    <a href="/offer-report"><button class="btn-estadisticas">Ver estadísticas</button></a>
-                </td>
-            </tr>
-            <tr (click)="redirigirOferta()">
-                <td class="nombre">Nombre</td>
-                <td>Ciudad
+            <tr (click)="redirigirOferta(oferta.id)" *ngFor="let oferta of listaOfertas">
+                <td class="nombre">{{oferta.nombre}}</td>
+                <td>{{oferta.ciudad}}
                     <a href="/offer-report"><button class="btn-estadisticas">Ver estadísticas</button></a>
                 </td>
             </tr>

@@ -34,4 +34,8 @@ export class OfertaService {
   eliminarOferta(id_oferta: number): Observable<any>{
     return this.http.delete(`${this.apiUrl}/Eliminar?id=${id_oferta}`);
   }
+
+  estadisticasOferta(id_oferta: number): Observable<any>{
+    return this.http.get(`${this.apiUrl}/EstadisticaOferta?id=${id_oferta}`);
+  }
 }

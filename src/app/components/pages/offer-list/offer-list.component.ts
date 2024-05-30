@@ -39,7 +39,6 @@ export class OfferListComponent implements OnInit {
         }
       });
     }
-    
   }
 
   getItem(key: string): any {
