@@ -56,7 +56,6 @@ export class OfferPostComponent implements OnInit {
     const usuario = this.getItem('perfil');
     this.formOffer.usuario_id = usuario.id
     this.formOffer.tipo_perfil = usuario.tipo_perfil;
-    console.log(this.formOffer);
     if(this.validarFormulario()){
       this.ofertaService.crearOferta(this.formOffer).subscribe({
         next: response => {

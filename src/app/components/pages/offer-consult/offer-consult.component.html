@@ -3,48 +3,82 @@
         <h3 class="info">Información de la oferta
             <a href="/offer-list"><img src="./assets/img/flecha-atras.png" id="flecha-atras" alt="flecha-atras"></a>
         </h3>
-        <form action="">
+        <div *ngIf="mensage !== ''" class="dvErrorGeneral">
+            <p class="text-error">{{mensage}}</p>
+        </div>
+        <form (submit)="onSubmit()" #form="ngForm">
             <div class="row">
                 <div class="col-lg-2">
                     <label for="txtId">ID</label>
-                    <input id="txtId" type="text" [readOnly]="true" class="dato" [value]="id" />
+                    <input id="txtId" type="number" [readOnly]="true" class="dato"  name="id"
+                    [(ngModel)]="formOffer.id"/>
                 </div>
                 <div class="col-lg-5">
                     <label for="txtNombre">Nombre</label>
-                    <input id="txtNombre" type="text" [readOnly]="soloLectura" class="dato" [value]="nombre" />
+                    <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="dvError">
+                        <small *ngIf="nombre.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input id="txtNombre" type="text" [readOnly]="soloLectura" class="dato"
+                    name="nombre" [(ngModel)]="formOffer.nombre"
+                    required #nombre="ngModel"/>
                 </div>
                 <div class="col-lg-5">
                     <label for="txtCargo">Cargo</label>
-                    <input id="txtCargo" type="text" [readOnly]="soloLectura" class="dato" [value]="cargo" />
+                    <div *ngIf="cargo.invalid && (cargo.dirty || cargo.touched)" class="dvError">
+                        <small *ngIf="cargo.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input id="txtCargo" type="text" [readOnly]="soloLectura" class="dato"
+                    name="cargo" [(ngModel)]="formOffer.cargo"
+                    required #cargo="ngModel"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-3">
                     <label for="txtSalario">Salario</label>
-                    <input id="txtSalario" type="text" [readOnly]="soloLectura" class="dato" [value]="salario" />
+                    <div *ngIf="salario.invalid && (salario.dirty || salario.touched)" class="dvError">
+                        <small *ngIf="salario.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input id="txtSalario" type="number" [readOnly]="soloLectura" class="dato"
+                    name="salario" [(ngModel)]="formOffer.salario"
+                    required #salario="ngModel"/>
                 </div>
                 <div class="col-lg-3">
                     <label for="txtCiudad">Ciudad</label>
-                    <input id="txtCiudad" type="text" [readOnly]="soloLectura" class="dato" [value]="ciudad" />
+                    <div *ngIf="ciudad.invalid && (ciudad.dirty || ciudad.touched)" class="dvError">
+                        <small *ngIf="ciudad.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input id="txtCiudad" type="text" [readOnly]="soloLectura" class="dato" 
+                    name="ciudad" [(ngModel)]="formOffer.ciudad"
+                    required #ciudad="ngModel"/>
                 </div>
                 <div class="col-lg-3">
                     <label for="txtExperiencia">Años de experiencia</label>
-                    <input id="txtExperiencia" type="text" [readOnly]="soloLectura" class="dato" [value]="experiencia" />
+                    <div *ngIf="experiencia.invalid && (experiencia.dirty || experiencia.touched)" class="dvError">
+                        <small *ngIf="experiencia.errors?.['required']" class="text-danger">Este campo es requerido</small>
+                    </div>
+                    <input id="txtExperiencia" type="number" [readOnly]="soloLectura" class="dato" 
+                    name="experiencia" [(ngModel)]="formOffer.anios_experiencia"
+                    required #experiencia="ngModel"/>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-7" class="funciones">
                     <label for="txtFunciones">Funciones</label>
-                    <textarea id="txtFunciones" type="text" [readOnly]="soloLectura" class="dato"></textarea>
+                    <div *ngFor="let funcion of funciones; let i = index" class="container__funcion">
+                        <input class="dato" type="text" [readOnly]="soloLectura" name="funcion{{i}}" [(ngModel)]="funciones[i].descripcion"/>
+                        <img src="./assets/img/icono-eliminar.png" alt="Eliminar" width="20px" height="20px"
+                        *ngIf="icon_close" (click)="eliminarFuncion(i)">
+                    </div>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-4 text-end">
-                    <button [ngClass]="visible" class="btn-azul" id="btnModificar" (click)="habilitarCampos()">Modificar oferta</button>
-                    <button [ngClass]="visible" class="btn-azul" id="btnVerCandidatos" (click)="redirigir()">Ver candidatos</button>
-                    <button [ngClass]="visible" class="btn-eliminar" id="btnEliminar">Eliminar</button>
+                    <button [ngClass]="visible" class="btn-azul" id="btnModificar" (click)="habilitarCampos()" type="button">Modificar oferta</button>
+                    <button [ngClass]="visible" class="btn-azul" id="btnVerCandidatos" (click)="redirigir()" type="button">Ver candidatos</button>
+                    <button [ngClass]="visible" class="btn-eliminar" id="btnEliminar" type="button" (click)="eliminarOferta()">Eliminar</button>
 
                     <button [ngClass]="invisible" class="btn-guardar" id="btnGuardar">Guardar</button>
-                    <button [ngClass]="invisible" class="btn-cancelar" id="btnCancelar" (click)="bloquearCampos()">Cancelar</button>
+                    <button [ngClass]="invisible" class="btn-cancelar" id="btnCancelar" (click)="bloquearCampos()" type="button">
+                        Cancelar</button>
                 </div>
             </div>
         </form> 

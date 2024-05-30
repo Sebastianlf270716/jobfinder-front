@@ -85,3 +85,32 @@ button{
 .ocultar{
     display: none;
 }
+
+.dvErrorGeneral {
+    text-align: center;
+}
+
+.text-error {
+    color: red;
+}
+
+.container__funcion {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.container__funcion img {
+    margin-top:  -12px;
+}
+
+.funciones {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+
+.funciones img {
+    cursor: pointer;
+}

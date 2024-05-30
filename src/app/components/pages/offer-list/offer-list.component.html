@@ -4,25 +4,16 @@
             <th>Nombre</th>
             <th>Ciudad</th>
             <th>Salario
-            <a href="/home-employer"><img src="./assets/img/flecha-atras.png" alt="flecha-atras" class="flecha-atras" /></a>
+                <a href="/home-employer"><img src="./assets/img/flecha-atras.png" alt="flecha-atras"
+                        class="flecha-atras" /></a>
 
             </th>
         </thead>
         <tbody>
-            <tr (click)="redirigir()">
-                <td class="nombre">Nombre</td>
-                <td class="ciudad">Ciudad</td>
-                <td>$ 0</td>
-            </tr>
-            <tr (click)="redirigir()">
-                <td class="nombre">Nombre</td>
-                <td class="ciudad">Ciudad</td>
-                <td>$ 0</td>
-            </tr>
-            <tr (click)="redirigir()">
-                <td class="nombre">Nombre</td>
-                <td class="ciudad">Ciudad</td>
-                <td>$ 0</td>
+            <tr (click)="redirigir(oferta.id)" *ngFor="let oferta of listaOfertas">
+                <td class="nombre">{{oferta.nombre}}</td>
+                <td class="ciudad">{{oferta.ciudad}}</td>
+                <td>$ {{oferta.salario}}</td>
             </tr>
         </tbody>
     </table>
