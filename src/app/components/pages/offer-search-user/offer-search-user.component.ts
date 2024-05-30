@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OfertaService } from 'src/app/services/oferta.service';
 
 @Component({
   selector: 'app-offer-search-user',
@@ -8,13 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class OfferSearchUserComponent implements OnInit {
   cboFiltro: string = "cboFiltro";
   cboFiltroDesplegado: string = "ocultar";  
+  id: Number=0;
   nombreOferta:string = "";
   empresa:string = "";
   ciudad:string = "";
   cargo:string = "";
   salario:Number = 0;
   experiencia:Number = 0;
-  funciones:string[] = [];
+  funciones:any[] = [];
 
   sinSeleccionar:string = 'sinSeleccionar';
   ofertaSeleccionada:string = 'ocultar'
@@ -33,13 +35,17 @@ export class OfferSearchUserComponent implements OnInit {
     this.ofertaSeleccionada = 'ofertaSeleccionada';
     this.sinSeleccionar = 'ocultar';
 
-    this.nombreOferta = this.datos[e.target.id].nombre;
-    this.empresa = this.datos[e.target.id].empresa;
-    this.ciudad = this.datos[e.target.id].ciudad;
-    this.cargo = this.datos[e.target.id].cargo;
-    this.salario = this.datos[e.target.id].salario;
-    this.experiencia = this.datos[e.target.id].experiencia;
-    this.funciones = this.datos[e.target.id].funciones;
+    this.id = this.datos[e.target.id-1].id;
+    this.nombreOferta = this.datos[e.target.id-1].nombre;
+    this.empresa = this.datos[e.target.id-1].empresa;
+    this.ciudad = this.datos[e.target.id-1].ciudad;
+    this.cargo = this.datos[e.target.id-1].cargo;
+    this.salario = this.datos[e.target.id-1].salario;
+    this.experiencia = this.datos[e.target.id-1].experiencia;
+    this.funciones = this.datos[e.target.id-1].funciones;
+
+    this.registrarVisita();
+
   }
 
   public prevenirEvento(e: Event): void {
@@ -50,99 +56,63 @@ export class OfferSearchUserComponent implements OnInit {
     const padre = hijo.parentElement;
     const id = Number(padre?.id)
 
-    this.nombreOferta = this.datos[id].nombre;
-    this.empresa = this.datos[id].empresa;
-    this.ciudad = this.datos[id].ciudad;
-    this.cargo = this.datos[id].cargo;
-    this.salario = this.datos[id].salario;
-    this.experiencia = this.datos[id].experiencia;
-    this.funciones = this.datos[id].funciones;
+    this.id = this.datos[id-1].id;
+    this.nombreOferta = this.datos[id-1].nombre;
+    this.empresa = this.datos[id-1].empresa;
+    this.ciudad = this.datos[id-1].ciudad;
+    this.cargo = this.datos[id-1].cargo;
+    this.salario = this.datos[id-1].salario;
+    this.experiencia = this.datos[id-1].experiencia;
+    this.funciones = this.datos[id-1].funciones;
   }
 
   public buscar():void{
 
   }
 
-  constructor() { }
+  consultarOfertas(){
+    this.ofertaService.consultarOfertas().subscribe({
+      next: response => {
+        this.datos=response;
+        console.log(response);
+      },
+      error: error =>{
+        alert(error);
+      }
+    });
+  }
+
+  registrarVisita(){
+    this.ofertaService.registrarVisita(this.id).subscribe({
+      error: error =>{
+        alert(error);
+      }
+    });
+  }
+
+  getItem(key: string): any {
+    const item = localStorage.getItem('perfil');
+    return item ? JSON.parse(item) : null;
+  }
+
+  registrarCandidato(){
+    const usuario = this.getItem('perfil');
+    this.ofertaService.registrarCandidato(usuario.id, this.id).subscribe({
+      next: response => {
+        alert(response);
+      },
+      error: error => {
+        alert(error);
+      }
+    })
+  }
+
+  constructor(private ofertaService: OfertaService) { }
 
   ngOnInit(): void {
+    this.consultarOfertas();
   }
 
 
-  
-  /*
-  Datos de prueba
-  */
- datos = [
-  {
-    id: 0,
-    nombre: "Desarrollador frontend",
-    empresa: "Postobón",
-    ciudad: "Medellín",
-    cargo: "Desarrolador",
-    salario: 10000000,
-    experiencia: 4,
-    funciones:["programar", "barrer", "trapear"]
-  },
-  {
-    id: 1,
-    nombre: "Ingeniero civil",
-    empresa: "Argos",
-    ciudad: "Bogotá",
-    cargo: "Ingeniero",
-    salario: 20000000,
-    experiencia: 5,
-    funciones:["Levantar muros", "Hacer puentes", "Pintar casas"]
-  },
-  {
-    id: 2,
-    nombre: "Diseñador gráfico",
-    empresa: "Diseños S.A",
-    ciudad: "Cali",
-    cargo: "Diseñador",
-    salario: 10000,
-    experiencia: 20,
-    funciones:["Lavar baños", "Servir tintos"]
-  },
-  {
-    id: 2,
-    nombre: "Diseñador gráfico",
-    empresa: "Diseños S.A",
-    ciudad: "Cali",
-    cargo: "Diseñador",
-    salario: 10000,
-    experiencia: 20,
-    funciones:["Lavar baños", "Servir tintos"]
-  },
-  {
-    id: 2,
-    nombre: "Diseñador gráfico",
-    empresa: "Diseños S.A",
-    ciudad: "Cali",
-    cargo: "Diseñador",
-    salario: 10000,
-    experiencia: 20,
-    funciones:["Lavar baños", "Servir tintos"]
-  },
-  {
-    id: 2,
-    nombre: "Diseñador gráfico",
-    empresa: "Diseños S.A",
-    ciudad: "Cali",
-    cargo: "Diseñador",
-    salario: 10000,
-    experiencia: 20,
-    funciones:["Lavar baños", "Servir tintos"]
-  },
-  {
-    id: 2,
-    nombre: "Diseñador gráfico",
-    empresa: "Diseños S.A",
-    ciudad: "Cali",
-    cargo: "Diseñador",
-    salario: 10000,
-    experiencia: 20,
-    funciones:["Lavar baños", "Servir tintos"]
-  }
- ]
+ datos: any[] = []
 }

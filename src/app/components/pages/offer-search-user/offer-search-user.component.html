@@ -43,7 +43,7 @@
                         <p class="ciudad">{{ciudad}}</p>
                     </div>
                     <div class="col-md-5 divBoton">
-                        <button class="btn-aplicar">Aplicar a oferta</button>
+                        <button class="btn-aplicar" (click)="registrarCandidato()">Aplicar a oferta</button>
                     </div>
                 </div>
                 <div class="row">
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col-md-9 columna">
                         <ul>
-                            <li class="funcion" *ngFor="let funcion of funciones"><span class="valor">{{funcion}}</span></li>
+                            <li class="funcion" *ngFor="let funcion of funciones"><span class="valor">{{funcion.descripcion}}</span></li>
                         </ul>
                     </div>
                 </div>
