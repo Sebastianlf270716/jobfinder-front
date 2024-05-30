@@ -22,10 +22,10 @@
     <div class="dvOfertas">
         <div class="dvListaOfertas">
             <ul>
-                <li (click)="seleccionarOferta($event)" *ngFor="let oferta of datos" [id]="oferta.id" class="oferta" >
-                    <h3 (click)="prevenirEvento($event)" class="listNombre">{{oferta.nombre}}</h3>
-                    <p (click)="prevenirEvento($event)" class="listEmpresa">{{oferta.empresa}}</p>
-                    <p (click)="prevenirEvento($event)" class="listCiudad">{{oferta.ciudad}}</p>
+                <li (click)="seleccionarOferta(i)" *ngFor="let oferta of datos; let i = index" [id]="oferta.id" class="oferta" >
+                    <h3 (click)="prevenirEvento($event, i)" class="listNombre">{{oferta.nombre}}</h3>
+                    <p (click)="prevenirEvento($event, i)" class="listEmpresa">{{oferta.empresa}}</p>
+                    <p (click)="prevenirEvento($event, i)" class="listCiudad">{{oferta.ciudad}}</p>
                 </li>
             </ul>
         </div>

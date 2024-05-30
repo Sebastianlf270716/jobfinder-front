@@ -31,39 +31,43 @@ export class OfferSearchUserComponent implements OnInit {
     this.cboFiltroDesplegado = "ocultar";
   }
 
-  public seleccionarOferta(e:any): void{
+  public seleccionarOferta(i: number): void{
     this.ofertaSeleccionada = 'ofertaSeleccionada';
     this.sinSeleccionar = 'ocultar';
 
-    this.id = this.datos[e.target.id-1].id;
-    this.nombreOferta = this.datos[e.target.id-1].nombre;
-    this.empresa = this.datos[e.target.id-1].empresa;
-    this.ciudad = this.datos[e.target.id-1].ciudad;
-    this.cargo = this.datos[e.target.id-1].cargo;
-    this.salario = this.datos[e.target.id-1].salario;
-    this.experiencia = this.datos[e.target.id-1].anios_experiencia;
-    this.funciones = this.datos[e.target.id-1].funciones;
+    console.log(this.datos[i]);
+
+    this.id = this.datos[i].id;
+    this.nombreOferta = this.datos[i].nombre;
+    this.empresa = this.datos[i].empresa;
+    this.ciudad = this.datos[i].ciudad;
+    this.cargo = this.datos[i].cargo;
+    this.salario = this.datos[i].salario;
+    this.experiencia = this.datos[i].anios_experiencia;
+    this.funciones = this.datos[i].funciones;
 
     this.registrarVisita();
 
   }
 
-  public prevenirEvento(e: Event): void {
+  public prevenirEvento(e: Event, i: number): void {
     e.stopPropagation();
     this.ofertaSeleccionada = 'ofertaSeleccionada';
     this.sinSeleccionar = 'ocultar';
     const hijo = e.target as HTMLElement;
     const padre = hijo.parentElement;
-    const id = Number(padre?.id)
+    const id = Number(padre?.id);
 
-    this.id = this.datos[id-1].id;
-    this.nombreOferta = this.datos[id-1].nombre;
-    this.empresa = this.datos[id-1].empresa;
-    this.ciudad = this.datos[id-1].ciudad;
-    this.cargo = this.datos[id-1].cargo;
-    this.salario = this.datos[id-1].salario;
-    this.experiencia = this.datos[id-1].anios_experiencia;
-    this.funciones = this.datos[id-1].funciones;
+    this.id = this.datos[i].id;
+    this.nombreOferta = this.datos[i].nombre;
+    this.empresa = this.datos[i].empresa;
+    this.ciudad = this.datos[i].ciudad;
+    this.cargo = this.datos[i].cargo;
+    this.salario = this.datos[i].salario;
+    this.experiencia = this.datos[i].anios_experiencia;
+    this.funciones = this.datos[i].funciones;
+
+    this.registrarVisita();
   }
 
   public buscar():void{

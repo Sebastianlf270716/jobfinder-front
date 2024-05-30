@@ -28,7 +28,7 @@ export class OfferReportComponent implements OnInit {
     const id_oferta = this.getItem('id_oferta');
     this.ofertaService.estadisticasOferta(id_oferta).subscribe({
       next: data => {
-
+        console.log(data);
         this.generos = {
           masculino: data.masculino,
           femenino: data.femenino,
