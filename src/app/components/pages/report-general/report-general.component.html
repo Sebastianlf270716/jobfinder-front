@@ -7,32 +7,12 @@
             <th>Candidatos</th>
         </thead>
         <tbody>
-            <tr>
-                <td class="td1">Oferta 1</td>
-                <td class="td2">OMedellín</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td class="td1">Oferta 1</td>
-                <td class="td2">OMedellín</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td class="td1">Oferta 1</td>
-                <td class="td2">OMedellín</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td class="td1">Oferta 1</td>
-                <td class="td2">OMedellín</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td class="td1">Oferta 1</td>
-                <td class="td2">OMedellín</td>
-                <td>10</td>
+            <tr *ngFor="let oferta of listaOfertas let i=index">
+                <td class="td1">{{oferta.nombre}}</td>
+                <td class="td2">{{oferta.ciudad}}</td>
+                <td>{{candidatos[i]}}</td>
             </tr>
         </tbody>
     </table>
-    <h3 class="promedio">Promedio de candidatos: <span class="valorPromedio">10</span></h3>
+    <h3 class="promedio">Promedio de candidatos: <span class="valorPromedio">{{calcularPromedio()}}</span></h3>
 </div>

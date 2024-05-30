@@ -35,6 +35,8 @@ export class OfferSearchComponent implements OnInit {
     this.ofertaSeleccionada = 'ofertaSeleccionada';
     this.sinSeleccionar = 'ocultar';
 
+    console.log(this.datos);
+
     this.id = this.datos[e.target.id-1].id;
     this.nombreOferta = this.datos[e.target.id-1].nombre;
     this.empresa = this.datos[e.target.id-1].empresa;

@@ -46,4 +46,8 @@ export class OfertaService {
   eliminarOferta(id_oferta: number): Observable<any>{
     return this.http.delete(`${this.apiUrl}/Eliminar?id=${id_oferta}`);
   }
+
+  consultarCandidatos(ofertas: any[]): Observable<any>{
+    return this.http.post(`${this.apiUrl}/ConsultarCandidatos`, ofertas);
+  }
 }
