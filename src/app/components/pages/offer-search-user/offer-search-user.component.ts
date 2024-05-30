@@ -41,7 +41,7 @@ export class OfferSearchUserComponent implements OnInit {
     this.ciudad = this.datos[e.target.id-1].ciudad;
     this.cargo = this.datos[e.target.id-1].cargo;
     this.salario = this.datos[e.target.id-1].salario;
-    this.experiencia = this.datos[e.target.id-1].experiencia;
+    this.experiencia = this.datos[e.target.id-1].anios_experiencia;
     this.funciones = this.datos[e.target.id-1].funciones;
 
     this.registrarVisita();
@@ -62,7 +62,7 @@ export class OfferSearchUserComponent implements OnInit {
     this.ciudad = this.datos[id-1].ciudad;
     this.cargo = this.datos[id-1].cargo;
     this.salario = this.datos[id-1].salario;
-    this.experiencia = this.datos[id-1].experiencia;
+    this.experiencia = this.datos[id-1].anios_experiencia;
     this.funciones = this.datos[id-1].funciones;
   }
 
