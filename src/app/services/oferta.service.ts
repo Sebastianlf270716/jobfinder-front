@@ -50,4 +50,8 @@ export class OfertaService {
   consultarCandidatos(ofertas: any[]): Observable<any>{
     return this.http.post(`${this.apiUrl}/ConsultarCandidatos`, ofertas);
   }
+
+  estadisticasOferta(id_oferta: number): Observable<any>{
+    return this.http.get(`${this.apiUrl}/EstadisticaOferta?id=${id_oferta}`);
+  }
 }

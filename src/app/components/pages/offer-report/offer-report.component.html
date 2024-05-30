@@ -5,7 +5,7 @@
             <h4 class="propiedad campo" id="nombreOferta">Nombre de la oferta:</h4>
         </div>
         <div class="col-lg-8">
-            <h4 class="valor campo">Nombre</h4>
+            <h4 class="valor campo">{{estadisticas.nombre}}</h4>
         </div>
     </div>
     <div class="row">
@@ -13,13 +13,13 @@
             <h4 class="propiedad campo">Cantidad de candidatos:</h4>
         </div>
         <div class="col-lg-2">
-            <h4 class="valor campo">0</h4>
+            <h4 class="valor campo">{{estadisticas.candidatos}}</h4>
         </div>
         <div class="col-lg-5">
             <h4 class="propiedad campo">Cantidad de visualizaciones:</h4>
         </div>
         <div class="col-lg-1">
-            <h4 class="valor campo">0</h4>
+            <h4 class="valor campo">{{estadisticas.visualizaciones}}</h4>
         </div>
     </div>
     <div class="row">
@@ -30,7 +30,7 @@
                     <h4 class="propGenero">Masculino:</h4>
                 </div>
                 <div class="col-4">
-                    <h4 class="valor">0</h4>
+                    <h4 class="valor">{{generos.masculino}}</h4>
                 </div>
             </div>
             <div class="row genero">
@@ -38,7 +38,7 @@
                     <h4 class="propGenero">Femenino:</h4>
                 </div>
                 <div class="col-4">
-                    <h4 class="valor">0</h4>
+                    <h4 class="valor">{{generos.femenino}}</h4>
                 </div>
             </div>
             <div class="row genero">
@@ -46,7 +46,7 @@
                     <h4 class="propGenero">Otro:</h4>
                 </div>
                 <div class="col-4">
-                    <h4 class="valor">0</h4>
+                    <h4 class="valor">{{generos.otro}}</h4>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
             <h4 class="propiedad campo">Postulados/visualizaciones:</h4>
         </div>
         <div class="col-lg-1">
-            <h4 class="valor campo">0%</h4>
+            <h4 class="valor campo">{{estadisticas.pVsV}}%</h4>
         </div>
     </div>
 </div>
